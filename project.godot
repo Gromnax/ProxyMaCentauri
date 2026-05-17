@@ -21,10 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-<<<<<<< HEAD
 EventBus="*uid://c3asprat4mqxv"
-=======
->>>>>>> Guillaume
 PreloadManager="*uid://bdlfem4nwvjn7"
 
 [display]
