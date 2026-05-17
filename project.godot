@@ -18,6 +18,10 @@ config/name="ProxyMaCentauri"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://c3asprat4mqxv"
+
 [dotnet]
 
 project/assembly_name="ProxyMaCentauri"

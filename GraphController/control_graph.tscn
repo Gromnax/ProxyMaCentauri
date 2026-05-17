@@ -92,11 +92,11 @@ robot_signals = Dictionary[String, Signal]({
 })
 metadata/_custom_type_script = "uid://c7ylgbdns21pt"
 
-[node name="Label" type="Button" parent="GraphEdit/GraphControlNode" unique_id=1845788497]
+[node name="Button" type="Button" parent="GraphEdit/GraphControlNode" unique_id=1845788497]
 layout_mode = 2
 text = "Another label"
 
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
 [connection signal="hello_sent" from="GraphEdit/GraphControlNode" to="GraphEdit/GraphControlNode" method="_on_hello_sent"]
-[connection signal="pressed" from="GraphEdit/GraphControlNode/Label" to="GraphEdit/GraphControlNode" method="_on_label_pressed"]
+[connection signal="pressed" from="GraphEdit/GraphControlNode/Button" to="GraphEdit/GraphControlNode" method="_on_label_pressed"]
