@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://d2xked7pqiy7r"]
+
+[ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
+[ext_resource type="Script" uid="uid://c7ylgbdns21pt" path="res://GraphController/graph_control_node.gd" id="2_tidi0"]
+
+[node name="ControlGraph" type="Control" unique_id=1969689270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=1604591377]
+layout_mode = 0
+offset_right = 1085.0
+offset_bottom = 640.0
+right_disconnects = true
+connections = Array[Dictionary]([{
+"from_node": &"SomeGraphNode2",
+"from_port": 0,
+"keep_alive": true,
+"to_node": &"SomeGraphNode",
+"to_port": 0
+}])
+script = ExtResource("1_h076a")
+
+[node name="GraphNode" type="GraphNode" parent="GraphEdit" unique_id=1408603018]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 139.0
+offset_right = 714.0
+offset_bottom = 217.0
+mouse_filter = 1
+position_offset = Vector2(505, 139)
+title = "SomeGraphNode"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="Label" type="Label" parent="GraphEdit/GraphNode" unique_id=183727686]
+layout_mode = 2
+text = "Some Label Here"
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit" unique_id=778102417]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 163.0
+offset_right = 435.0
+offset_bottom = 241.0
+mouse_filter = 1
+position_offset = Vector2(226, 163)
+title = "SomeGraphNode2"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="Label" type="Label" parent="GraphEdit/GraphNode2" unique_id=1528303770]
+layout_mode = 2
+text = "Another label"
+
+[node name="GraphControlNode" type="GraphNode" parent="GraphEdit" unique_id=1420929112]
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 86.0
+mouse_filter = 1
+title = "SomeSpecial"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("2_tidi0")
+robot_signals = Dictionary[String, Signal]({
+"Hello": Signal()
+})
+metadata/_custom_type_script = "uid://c7ylgbdns21pt"
+
+[node name="Label" type="Button" parent="GraphEdit/GraphControlNode" unique_id=1845788497]
+layout_mode = 2
+text = "Another label"
+
+[connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
+[connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
+[connection signal="hello_sent" from="GraphEdit/GraphControlNode" to="GraphEdit/GraphControlNode" method="_on_hello_sent"]
+[connection signal="pressed" from="GraphEdit/GraphControlNode/Label" to="GraphEdit/GraphControlNode" method="_on_label_pressed"]
