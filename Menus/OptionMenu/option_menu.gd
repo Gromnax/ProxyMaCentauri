@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_menu_pressed() -> void:
-	PreloadManager.change_level("main_menu")
+	PreloadBus.change_level("main_menu")

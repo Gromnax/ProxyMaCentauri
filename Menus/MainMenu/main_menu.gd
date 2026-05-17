@@ -16,7 +16,7 @@ func _on_button_start_pressed() -> void:
 
 
 func _on_button_options_pressed() -> void:
-	PreloadManager.change_level("option_menu")
+	PreloadBus.change_level("option_menu")
 
 
 func _on_button_exit_pressed() -> void:
