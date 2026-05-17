@@ -1,0 +1,266 @@
+[gd_scene format=3 uid="uid://bxagmxu4fpiow"]
+
+[ext_resource type="Texture2D" uid="uid://dnp41s027t85g" path="res://Assets/UI/Circles.png" id="1_wotb1"]
+[ext_resource type="Script" uid="uid://ds0vg52lspihu" path="res://Menus/MainMenu/main_menu.gd" id="1_y4ryc"]
+[ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="2_qq57v"]
+[ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="3_qq57v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4ryc"]
+bg_color = Color(0.09019608, 0.08627451, 0.101960786, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_7f67a"]
+base_font = ExtResource("2_qq57v")
+spacing_glyph = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsmfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4ryc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7f67a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lkur8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o0cfa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkur8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmurx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3tdx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxofw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsxsj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e5cb7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5am8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_no1ml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_op8kx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rm7yp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ha2ro"]
+
+[node name="MainMenu" type="Control" unique_id=1807417383]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_y4ryc")
+
+[node name="PanelBg" type="Panel" parent="." unique_id=530944441]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4ryc")
+
+[node name="TextureRectCircles" type="TextureRect" parent="." unique_id=1385438523]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.5
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_wotb1")
+expand_mode = 3
+
+[node name="LabelTitle" type="RichTextLabel" parent="." unique_id=2012193735]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.13
+anchor_right = 0.7
+anchor_bottom = 0.4
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_7f67a")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "Proxy[color=#FF0000]Ma[/color]
+Centauri"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxMenu" type="VBoxContainer" parent="." unique_id=201330554]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.6
+anchor_right = 0.65
+anchor_bottom = 0.85
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ButtonStart" type="Button" parent="VBoxMenu" unique_id=1273556120]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsmfo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y4ryc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7f67a")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lkur8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o0cfa")
+script = ExtResource("3_qq57v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxMenu/ButtonStart" unique_id=285749212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelSeparator" type="Panel" parent="VBoxMenu/ButtonStart/HBoxContainer" unique_id=1639751008]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkur8")
+
+[node name="LabelStart" type="RichTextLabel" parent="VBoxMenu/ButtonStart/HBoxContainer" unique_id=2065139090]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_qq57v")
+theme_override_fonts/bold_font = ExtResource("2_qq57v")
+theme_override_fonts/bold_italics_font = ExtResource("2_qq57v")
+theme_override_fonts/italics_font = ExtResource("2_qq57v")
+theme_override_fonts/mono_font = ExtResource("2_qq57v")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
+text = "Start"
+horizontal_alignment = 1
+
+[node name="PanelSeparator2" type="Panel" parent="VBoxMenu/ButtonStart/HBoxContainer" unique_id=1080533794]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkur8")
+
+[node name="ButtonOptions" type="Button" parent="VBoxMenu" unique_id=1227923596]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rmurx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c3tdx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pxofw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gsxsj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e5cb7")
+script = ExtResource("3_qq57v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxMenu/ButtonOptions" unique_id=1484419563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelSeparator" type="Panel" parent="VBoxMenu/ButtonOptions/HBoxContainer" unique_id=1372570479]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkur8")
+
+[node name="LabelOptions" type="RichTextLabel" parent="VBoxMenu/ButtonOptions/HBoxContainer" unique_id=2082635990]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_qq57v")
+theme_override_fonts/bold_font = ExtResource("2_qq57v")
+theme_override_fonts/bold_italics_font = ExtResource("2_qq57v")
+theme_override_fonts/italics_font = ExtResource("2_qq57v")
+theme_override_fonts/mono_font = ExtResource("2_qq57v")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
+text = "Options"
+horizontal_alignment = 1
+
+[node name="PanelSeparator2" type="Panel" parent="VBoxMenu/ButtonOptions/HBoxContainer" unique_id=698348747]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkur8")
+
+[node name="ButtonExit" type="Button" parent="VBoxMenu" unique_id=736962790]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c5am8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_no1ml")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_op8kx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rm7yp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ha2ro")
+script = ExtResource("3_qq57v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxMenu/ButtonExit" unique_id=1926168814]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelSeparator" type="Panel" parent="VBoxMenu/ButtonExit/HBoxContainer" unique_id=459630684]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkur8")
+
+[node name="LabelExit" type="RichTextLabel" parent="VBoxMenu/ButtonExit/HBoxContainer" unique_id=805895089]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_qq57v")
+theme_override_fonts/bold_font = ExtResource("2_qq57v")
+theme_override_fonts/bold_italics_font = ExtResource("2_qq57v")
+theme_override_fonts/italics_font = ExtResource("2_qq57v")
+theme_override_fonts/mono_font = ExtResource("2_qq57v")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
+text = "Exit"
+horizontal_alignment = 1
+
+[node name="PanelSeparator2" type="Panel" parent="VBoxMenu/ButtonExit/HBoxContainer" unique_id=115489634]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkur8")
+
+[connection signal="pressed" from="VBoxMenu/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxMenu/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="VBoxMenu/ButtonExit" to="." method="_on_button_exit_pressed"]

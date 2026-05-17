@@ -15,12 +15,19 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="ProxyMaCentauri"
+run/main_scene="uid://d0bxvctw13g7k"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*uid://c3asprat4mqxv"
+PreloadManager="*uid://bdlfem4nwvjn7"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
