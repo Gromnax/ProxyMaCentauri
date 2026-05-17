@@ -4,7 +4,8 @@ class_name GraphControlNode
 
 var input_signals : Array[SignalConnection] = []
 
-signal output
+
+signal output(args)
 
 class SignalConnection:
 	var port: int
@@ -42,4 +43,4 @@ func listen_stop(port: int, sig: Signal) -> bool:
 	return true
 
 @abstract
-func on_unhandled_signal_received(args: Array=[]) -> void;
+func on_unhandled_signal_received(args: Dictionary={}) -> void;

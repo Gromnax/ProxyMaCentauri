@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func on_unhandled_signal_received(args: Array=[]) -> void:
+func on_unhandled_signal_received(args: Dictionary={}) -> void:
 	pass
 
 

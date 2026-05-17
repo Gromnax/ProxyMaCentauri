@@ -81,6 +81,15 @@ offset_bottom = 405.0
 mouse_filter = 1
 position_offset = Vector2(273, 325)
 
+[node name="PulsarNode2" parent="GraphEdit" unique_id=584886048 instance=ExtResource("2_rndvx")]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 442.0
+offset_right = 437.0
+offset_bottom = 522.0
+mouse_filter = 1
+position_offset = Vector2(274, 442)
+
 [node name="Printer" parent="GraphEdit" unique_id=1640221557 instance=ExtResource("3_vnras")]
 layout_mode = 0
 offset_left = 580.0
@@ -89,6 +98,15 @@ offset_right = 728.0
 offset_bottom = 409.0
 mouse_filter = 1
 position_offset = Vector2(580, 331)
+
+[node name="Printer2" parent="GraphEdit" unique_id=1140518660 instance=ExtResource("3_vnras")]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 456.0
+offset_right = 741.0
+offset_bottom = 534.0
+mouse_filter = 1
+position_offset = Vector2(593, 456)
 
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
