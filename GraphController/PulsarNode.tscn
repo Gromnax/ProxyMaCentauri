@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://4o1323va1pb"]
+
+[ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/pulsar_node.gd" id="1_32qu6"]
+
+[node name="PulsarNode" type="GraphNode" unique_id=2041580164 node_paths=PackedStringArray("timer")]
+offset_right = 9.0
+offset_bottom = 55.0
+title = "Pulsar"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_32qu6")
+timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://dmg65t0orfe1c"
+
+[node name="Timer" type="Timer" parent="." unique_id=441151500]
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=485080353]
+layout_mode = 2
+text = "Every second"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

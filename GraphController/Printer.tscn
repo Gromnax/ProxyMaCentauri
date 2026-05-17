@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bu0lmg4aplk7t"]
+
+[ext_resource type="Script" uid="uid://etb52btahptb" path="res://GraphController/printer.gd" id="1_pa20e"]
+
+[node name="Printer" type="GraphNode" unique_id=1640221557]
+offset_right = 9.0
+offset_bottom = 55.0
+title = "Printer"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_pa20e")
+metadata/_custom_type_script = "uid://etb52btahptb"
+
+[node name="Label" type="Label" parent="." unique_id=1187825304]
+layout_mode = 2
+text = "Pulse Receiver"
