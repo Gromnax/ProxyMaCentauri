@@ -4,4 +4,3 @@
 
 [node name="GraphControlNode" type="GraphNode" unique_id=1170930826]
 script = ExtResource("1_3wkxq")
-robot_signals = Dictionary[String, Signal]({})
