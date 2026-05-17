@@ -3,18 +3,50 @@
 [ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="1_2j4fr"]
 [ext_resource type="Script" uid="uid://bbd4iwe1se4ps" path="res://Menus/OptionMenu/option_menu.gd" id="1_i7mvv"]
 [ext_resource type="FontFile" uid="uid://b8y2018w1qshj" path="res://Assets/UI/Font/Coda/Coda-ExtraBold.ttf" id="2_i7mvv"]
+[ext_resource type="Texture2D" uid="uid://dnp41s027t85g" path="res://Assets/UI/Circles.png" id="2_l1c55"]
+[ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="3_f0s6s"]
+[ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="4_r73as"]
+[ext_resource type="Script" uid="uid://cjy0dm0b5x7gw" path="res://Menus/OptionMenu/h_box_toogle.gd" id="7_5g8k6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1c55"]
 bg_color = Color(0.09019608, 0.08627451, 0.101960786, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0s6s"]
+[sub_resource type="FontVariation" id="FontVariation_5g8k6"]
+base_font = ExtResource("3_f0s6s")
+spacing_glyph = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_333eg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31yhm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7u7no"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xbrk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smt35"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24phc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_333eg"]
+bg_color = Color(0.020221364, 0.08232207, 0.09061047, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u7no"]
+bg_color = Color(0.7372549, 0.9137255, 0.9372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31yhm"]
+bg_color = Color(0.38039216, 0.75686276, 0.83137256, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r73as"]
-content_margin_left = 10.0
-content_margin_top = 2.0
-content_margin_right = 10.0
-content_margin_bottom = 2.0
-draw_center = false
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g8k6"]
+bg_color = Color(0.21960784, 0.75686276, 0.83137256, 1)
+border_color = Color(0.21960784, 0.75686276, 0.83137256, 1)
+expand_margin_left = 2.0
+expand_margin_top = 10.0
+expand_margin_right = 2.0
+expand_margin_bottom = 10.0
 
 [node name="OptionMenu" type="Control" unique_id=533213800]
 layout_mode = 3
@@ -35,45 +67,252 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l1c55")
 
-[node name="PanelContainerMain" type="PanelContainer" parent="." unique_id=732218560]
+[node name="TextureRectCircles" type="TextureRect" parent="." unique_id=1368574608]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.03
-anchor_top = 0.03
-anchor_right = 0.97
-anchor_bottom = 0.97
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.5
+anchor_bottom = 0.98
+offset_left = -518.4
+offset_right = 518.4
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f0s6s")
+mouse_filter = 2
+texture = ExtResource("2_l1c55")
+expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainerMain" unique_id=1307494962]
+[node name="LabelTitle" type="RichTextLabel" parent="." unique_id=2089498999]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.13
+anchor_right = 0.7
+anchor_bottom = 0.4
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_5g8k6")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxFooter" type="VBoxContainer" parent="." unique_id=1135090913]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.75
+anchor_right = 0.65
+anchor_bottom = 0.8
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ButtonBack" type="Button" parent="VBoxFooter" unique_id=609408742]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_333eg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_31yhm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7u7no")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0xbrk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_smt35")
+script = ExtResource("4_r73as")
 
-[node name="PanelContainerHeader" type="PanelContainer" parent="PanelContainerMain/VBoxContainer" unique_id=1887109572]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxFooter/ButtonBack" unique_id=554194016]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelSeparator" type="Panel" parent="VBoxFooter/ButtonBack/HBoxContainer" unique_id=250400142]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_24phc")
+
+[node name="LabelStart" type="RichTextLabel" parent="VBoxFooter/ButtonBack/HBoxContainer" unique_id=1328270316]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_f0s6s")
+theme_override_fonts/bold_font = ExtResource("3_f0s6s")
+theme_override_fonts/bold_italics_font = ExtResource("3_f0s6s")
+theme_override_fonts/italics_font = ExtResource("3_f0s6s")
+theme_override_fonts/mono_font = ExtResource("3_f0s6s")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+text = "Return to menu"
+horizontal_alignment = 1
+
+[node name="PanelSeparator2" type="Panel" parent="VBoxFooter/ButtonBack/HBoxContainer" unique_id=1158913149]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_24phc")
+
+[node name="HBoxBody" type="VBoxContainer" parent="." unique_id=1990791150]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.45
+anchor_right = 0.65
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxScreen" type="HBoxContainer" parent="HBoxBody" unique_id=1319682729]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_r73as")
 
-[node name="LabelTitle" type="RichTextLabel" parent="PanelContainerMain/VBoxContainer/PanelContainerHeader" unique_id=951882701]
+[node name="LabelScreen" type="RichTextLabel" parent="HBoxBody/HBoxScreen" unique_id=1444044873]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("1_2j4fr")
 theme_override_fonts/bold_font = ExtResource("2_i7mvv")
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
-text = "Options"
+text = "Full screen"
+vertical_alignment = 1
 
-[node name="PanelContainerBody" type="PanelContainer" parent="PanelContainerMain/VBoxContainer" unique_id=1184060467]
+[node name="Control" type="Control" parent="HBoxBody/HBoxScreen" unique_id=390977421]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
 
-[node name="PanelContainerFooter" type="PanelContainer" parent="PanelContainerMain/VBoxContainer" unique_id=1574257062]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+[node name="HBoxToogle" type="HBoxContainer" parent="HBoxBody/HBoxScreen/Control" unique_id=1407504015]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("7_5g8k6")
 
-[node name="ButtonMenu" type="Button" parent="PanelContainerMain/VBoxContainer/PanelContainerFooter" unique_id=1353395209]
+[node name="ButtonOn" type="Button" parent="HBoxBody/HBoxScreen/Control/HBoxToogle" unique_id=290846027]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 0.4117647)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_2j4fr")
-theme_override_font_sizes/font_size = 32
-text = "Back to menu"
+theme_override_styles/normal = SubResource("StyleBoxFlat_333eg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/hover = SubResource("StyleBoxFlat_31yhm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/focus = SubResource("StyleBoxFlat_31yhm")
+toggle_mode = true
+text = "On"
 
-[connection signal="pressed" from="PanelContainerMain/VBoxContainer/PanelContainerFooter/ButtonMenu" to="." method="_on_button_menu_pressed"]
+[node name="ButtonOff" type="Button" parent="HBoxBody/HBoxScreen/Control/HBoxToogle" unique_id=1339470668]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 0.4117647)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_2j4fr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_333eg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/hover = SubResource("StyleBoxFlat_31yhm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/focus = SubResource("StyleBoxFlat_31yhm")
+toggle_mode = true
+text = "Off"
+
+[node name="HBoxSFX" type="HBoxContainer" parent="HBoxBody" unique_id=390737114]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="LabelSFX" type="RichTextLabel" parent="HBoxBody/HBoxSFX" unique_id=1954822075]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("1_2j4fr")
+theme_override_fonts/bold_font = ExtResource("2_i7mvv")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+text = "SFX Volume"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxBody/HBoxSFX" unique_id=2051613710]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HScrollBarSFX" type="HScrollBar" parent="HBoxBody/HBoxSFX/Control" unique_id=11606255]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/scroll = SubResource("StyleBoxFlat_r73as")
+theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_5g8k6")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_5g8k6")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_5g8k6")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_5g8k6")
+max_value = 1.2
+step = 0.1
+custom_step = 0.1
+
+[node name="HBoxBGM" type="HBoxContainer" parent="HBoxBody" unique_id=1319622023]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="LabelBGM" type="RichTextLabel" parent="HBoxBody/HBoxBGM" unique_id=1281284538]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("1_2j4fr")
+theme_override_fonts/bold_font = ExtResource("2_i7mvv")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+text = "BGM Volume"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxBody/HBoxBGM" unique_id=1386443761]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HScrollBarBGM" type="HScrollBar" parent="HBoxBody/HBoxBGM/Control" unique_id=800656899]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/scroll = SubResource("StyleBoxFlat_r73as")
+theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_r73as")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_5g8k6")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_5g8k6")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_5g8k6")
+max_value = 1.2
+step = 0.1
+value = 1.2
+custom_step = 0.1
+
+[connection signal="pressed" from="VBoxFooter/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="HBoxBody/HBoxScreen/Control/HBoxToogle/ButtonOn" to="HBoxBody/HBoxScreen/Control/HBoxToogle" method="_on_button_on_pressed"]
+[connection signal="pressed" from="HBoxBody/HBoxScreen/Control/HBoxToogle/ButtonOff" to="HBoxBody/HBoxScreen/Control/HBoxToogle" method="_on_button_off_pressed"]
+[connection signal="value_changed" from="HBoxBody/HBoxSFX/Control/HScrollBarSFX" to="." method="_on_h_scroll_bar_sfx_value_changed"]
+[connection signal="value_changed" from="HBoxBody/HBoxBGM/Control/HScrollBarBGM" to="." method="_on_h_scroll_bar_bgm_value_changed"]

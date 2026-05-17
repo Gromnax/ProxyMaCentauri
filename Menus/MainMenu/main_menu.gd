@@ -1,23 +1,13 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_button_start_pressed() -> void:
-	pass # Replace with function body.
-
 
 func _on_button_options_pressed() -> void:
 	PreloadBus.change_level("option_menu")
 
 
 func _on_button_exit_pressed() -> void:
-	get_tree().quit()
+	if OS.get_name() in ["Web", "HTML5"]:
+		JavaScriptBridge.eval("window.close()")
+	else:
+		get_tree().quit()
