@@ -8,7 +8,7 @@ var scenes = {
 
 ## All resources are here. A resource is a file with .tres or .res extension
 var resources = {
-	
+	"options" = preload("res://Data/options_data.tres")
 }
 
 ## All references are here. They can be accessed by root
