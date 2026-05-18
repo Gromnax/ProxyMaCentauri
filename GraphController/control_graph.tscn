@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d2xked7pqiy7r"]
 
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
-[ext_resource type="PackedScene" uid="uid://4o1323va1pb" path="res://GraphController/PulsarNode.tscn" id="2_rndvx"]
-[ext_resource type="PackedScene" uid="uid://bu0lmg4aplk7t" path="res://GraphController/Printer.tscn" id="3_vnras"]
+[ext_resource type="PackedScene" uid="uid://4o1323va1pb" path="res://GraphController/GraphNodes/PulsarNode.tscn" id="2_rndvx"]
+[ext_resource type="PackedScene" uid="uid://bu0lmg4aplk7t" path="res://GraphController/GraphNodes/Printer.tscn" id="3_vnras"]
 
 [node name="ControlGraph" type="VBoxContainer" unique_id=633943305]
 custom_minimum_size = Vector2(100, 0)
@@ -77,18 +77,9 @@ layout_mode = 0
 offset_left = 273.0
 offset_top = 325.0
 offset_right = 436.0
-offset_bottom = 405.0
+offset_bottom = 480.0
 mouse_filter = 1
 position_offset = Vector2(273, 325)
-
-[node name="PulsarNode2" parent="GraphEdit" unique_id=584886048 instance=ExtResource("2_rndvx")]
-layout_mode = 0
-offset_left = 274.0
-offset_top = 442.0
-offset_right = 437.0
-offset_bottom = 522.0
-mouse_filter = 1
-position_offset = Vector2(274, 442)
 
 [node name="Printer" parent="GraphEdit" unique_id=1640221557 instance=ExtResource("3_vnras")]
 layout_mode = 0
