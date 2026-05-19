@@ -22,7 +22,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*uid://c3asprat4mqxv"
-PreloadBus="*uid://bdlfem4nwvjn7"
 
 [display]
 

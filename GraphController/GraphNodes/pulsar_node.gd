@@ -18,5 +18,8 @@ func on_unhandled_signal_received(args: Dictionary={}) -> void:
 
 
 func _on_timer_timeout() -> void:
-	output.emit()
+	output.emit(self, 0, "hello there")
 	print("Timer timeout!!")
+
+func signal_received(port: int, value:String="") -> void:
+	pass

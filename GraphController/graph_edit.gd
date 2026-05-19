@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
@@ -28,3 +28,27 @@ func _on_disconnection_request(from_node: StringName, from_port: int, to_node: S
 
 func get_child_from_name(node: StringName) -> Node:
 	return get_node(NodePath(node))
+
+
+func _on_child_entered_tree(node: Node) -> void:
+	if node is GraphControlNode:
+		node.output.connect(on_output_emitted)
+
+
+func on_output_emitted(source: Node, port: int, value:String) -> void:
+	var retrieved_connections = get_output_connections_from_node(source, port)
+	var child : GraphControlNode
+	for connection in retrieved_connections:
+		child = find_child(connection.node)
+		child.signal_received(connection.port, value)
+
+func get_output_connections_from_node(node:Node, port: int) -> Array:
+	var retrieved_connections = get_connection_list_from_node(node.name)
+	var result = []
+	for connection in retrieved_connections:
+		var dict = {}
+		if connection["from_node"] == node.name and connection["from_port"] == port:
+			dict["node"] = connection["to_node"]
+			dict["port"] = connection["to_port"]
+			result.push_back(dict)
+	return result

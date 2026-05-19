@@ -77,7 +77,7 @@ layout_mode = 0
 offset_left = 273.0
 offset_top = 325.0
 offset_right = 436.0
-offset_bottom = 480.0
+offset_bottom = 405.0
 mouse_filter = 1
 position_offset = Vector2(273, 325)
 
@@ -99,5 +99,6 @@ offset_bottom = 534.0
 mouse_filter = 1
 position_offset = Vector2(593, 456)
 
+[connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]

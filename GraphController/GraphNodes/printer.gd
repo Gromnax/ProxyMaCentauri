@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 
 func on_unhandled_signal_received(args: Dictionary={}) -> void:
 	print("Signal received!")
+
+func signal_received(port: int, value:String="") -> void:
+	print("Received value: " + value + " on port " + str(port))
