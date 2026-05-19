@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="RobotData" format=3 uid="uid://f05cv5y2x8lo"]
+
+[ext_resource type="Script" uid="uid://be0fqnvls5knk" path="res://Data/Struct/robot_struct.gd" id="1_0cgc1"]
+
+[resource]
+script = ExtResource("1_0cgc1")

@@ -4,3 +4,4 @@
 
 [resource]
 script = ExtResource("1_pgoju")
+bgm_volume = 0.5

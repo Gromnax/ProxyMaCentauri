@@ -51,12 +51,12 @@ text = "Some Label Here"
 
 [node name="GraphNode2" type="GraphNode" parent="GraphEdit" unique_id=778102417]
 layout_mode = 0
-offset_left = 226.0
-offset_top = 163.0
-offset_right = 435.0
-offset_bottom = 241.0
+offset_left = 229.0
+offset_top = 139.0
+offset_right = 438.0
+offset_bottom = 217.0
 mouse_filter = 1
-position_offset = Vector2(226, 163)
+position_offset = Vector2(229, 139)
 title = "SomeGraphNode2"
 slot/0/left_enabled = false
 slot/0/left_type = 0
