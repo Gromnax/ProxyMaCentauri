@@ -5,3 +5,6 @@ extends Node
 
 @warning_ignore_start("unused_signal")
 signal pseudo_code_changed(pseudo_code : Array)
+
+signal move_left;
+signal move_right;

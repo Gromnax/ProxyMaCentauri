@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
 [ext_resource type="PackedScene" uid="uid://4o1323va1pb" path="res://GraphController/GraphNodes/PulsarNode.tscn" id="2_rndvx"]
+[ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="3_m0dpa"]
 [ext_resource type="PackedScene" uid="uid://bu0lmg4aplk7t" path="res://GraphController/GraphNodes/Printer.tscn" id="3_vnras"]
 
 [node name="ControlGraph" type="VBoxContainer" unique_id=633943305]
@@ -81,6 +82,54 @@ offset_bottom = 405.0
 mouse_filter = 1
 position_offset = Vector2(273, 325)
 
+[node name="PulsarNode2" type="GraphNode" parent="GraphEdit" unique_id=466680463 node_paths=PackedStringArray("timer")]
+layout_mode = 0
+offset_left = 1090.0
+offset_top = 160.0
+offset_right = 1260.0
+offset_bottom = 265.0
+mouse_filter = 1
+position_offset = Vector2(1090, 160)
+title = "Check Condition"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("3_m0dpa")
+timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://dmg65t0orfe1c"
+
+[node name="Timer" type="Timer" parent="GraphEdit/PulsarNode2" unique_id=441151500]
+autostart = true
+
+[node name="Container" type="AspectRatioContainer" parent="GraphEdit/PulsarNode2" unique_id=293459404]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GraphEdit/PulsarNode2/Container" unique_id=1727136123]
+layout_mode = 2
+text = "True"
+
+[node name="Container2" type="AspectRatioContainer" parent="GraphEdit/PulsarNode2" unique_id=1962593887]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GraphEdit/PulsarNode2/Container2" unique_id=897145678]
+layout_mode = 2
+text = "False"
+
 [node name="Printer" parent="GraphEdit" unique_id=1640221557 instance=ExtResource("3_vnras")]
 layout_mode = 0
 offset_left = 580.0
@@ -102,3 +151,4 @@ position_offset = Vector2(593, 456)
 [connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
+[connection signal="timeout" from="GraphEdit/PulsarNode2/Timer" to="GraphEdit/PulsarNode2" method="_on_timer_timeout"]
