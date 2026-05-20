@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://c254nogowrni8"]
+
+[ext_resource type="Script" uid="uid://cqrc6x8k3omir" path="res://Menus/WinMenu/win_menu.gd" id="1_us7md"]
+[ext_resource type="Texture2D" uid="uid://dnp41s027t85g" path="res://Assets/UI/Circles.png" id="2_w4wew"]
+[ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="3_ei86r"]
+[ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="4_m45n1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa02v"]
+bg_color = Color(0.09019608, 0.08627451, 0.101960786, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_3ltbo"]
+base_font = ExtResource("3_ei86r")
+spacing_glyph = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8tf5x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kj3v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_javrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xtbi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7wt82"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5lkx"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="WinMenu" type="Control" unique_id=443409704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_us7md")
+
+[node name="PanelBg" type="Panel" parent="." unique_id=1163340835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fa02v")
+
+[node name="TextureRectCircles" type="TextureRect" parent="." unique_id=1512838463]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.5
+anchor_bottom = 0.98
+offset_left = -518.4
+offset_right = 518.4
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_w4wew")
+expand_mode = 3
+
+[node name="LabelTitle" type="RichTextLabel" parent="." unique_id=6822472]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.6
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_3ltbo")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "Astronaut is saved"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxFooter" type="VBoxContainer" parent="." unique_id=1094536107]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.75
+anchor_right = 0.65
+anchor_bottom = 0.8
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ButtonBack" type="Button" parent="VBoxFooter" unique_id=1522065799]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8tf5x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8kj3v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_javrx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xtbi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wt82")
+script = ExtResource("4_m45n1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxFooter/ButtonBack" unique_id=1133381787]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelSeparator" type="Panel" parent="VBoxFooter/ButtonBack/HBoxContainer" unique_id=1474535741]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h5lkx")
+
+[node name="LabelStart" type="RichTextLabel" parent="VBoxFooter/ButtonBack/HBoxContainer" unique_id=1012803919]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_ei86r")
+theme_override_fonts/bold_font = ExtResource("3_ei86r")
+theme_override_fonts/bold_italics_font = ExtResource("3_ei86r")
+theme_override_fonts/italics_font = ExtResource("3_ei86r")
+theme_override_fonts/mono_font = ExtResource("3_ei86r")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+text = "Return to menu"
+horizontal_alignment = 1
+
+[node name="PanelSeparator2" type="Panel" parent="VBoxFooter/ButtonBack/HBoxContainer" unique_id=1094711777]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h5lkx")
+
+[connection signal="pressed" from="VBoxFooter/ButtonBack" to="." method="_on_button_back_pressed"]
