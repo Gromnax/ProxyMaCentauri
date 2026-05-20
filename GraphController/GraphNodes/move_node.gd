@@ -7,7 +7,7 @@ var request_ids : Array[int] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	EventBus.when_arrived.connect(feedback_received)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,7 +40,11 @@ func signal_received(_port: int, _value:String="") -> void:
 	if request_sent:
 		request_ids.push_back(request)
 	
-func feedback_received(feedback_id : int, _move_success: bool) -> void:
+func feedback_received(feedback_id : int, move_success: bool) -> void:
 	if not feedback_id in request_ids:
 		pass
-	pass
+	request_ids.erase(feedback_id)
+	if move_success:
+		output.emit(self, 0, "moved")
+	else:
+		output.emit(self, 1, "move_failed")
