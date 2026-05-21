@@ -22,7 +22,7 @@ func _on_button_start_pressed() -> void:
 	phase_changed.emit(current_phase)
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.disabled = false
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.disabled = true
-	$CharacterPlayer.camera.enabled = true
+	$Robot/Camera2D.enabled = true
 	$Camera2DOverview.enabled = false
 
 func _on_button_retry_pressed() -> void:
@@ -31,7 +31,7 @@ func _on_button_retry_pressed() -> void:
 	phase_changed.emit(current_phase)
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.disabled = true
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.disabled = false
-	$CharacterPlayer.camera.enabled = false
+	$Robot/Camera2D.enabled = false
 	$Camera2DOverview.enabled = true
 	
 func update_ui_retry():
