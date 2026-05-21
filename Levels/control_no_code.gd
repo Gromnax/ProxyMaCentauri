@@ -15,27 +15,27 @@ func _ready() -> void:
 	# IMPORTANT : Le check_is_arrived et tout les reponse doivent etre précisement aprés le check.
 	# Si il y a une ligne de code entre nottament une boucle, il attendra le signal qui est déja passé.
 	# Forcer un delai est possible mais inconsistent.
-	EventBus.move_right.emit()
+	EventBus.move_right.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_right.emit()
+	EventBus.move_right.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_right.emit()
+	EventBus.move_right.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_right.emit()
+	EventBus.move_right.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_right.emit()
+	EventBus.move_right.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_left.emit()
+	EventBus.move_left.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_left.emit()
+	EventBus.move_left.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_left.emit()
+	EventBus.move_left.emit(0)
 	await EventBus.check_is_arrived
-	EventBus.move_left.emit()
+	EventBus.move_left.emit(0)
 	await EventBus.check_is_arrived
 
 func _on_button_move_right_pressed() -> void:
-	EventBus.move_right.emit()
+	EventBus.move_right.emit(0)
 	var response = await EventBus.check_is_arrived
 	for btn in buttons:
 		btn.disabled = true
@@ -44,7 +44,7 @@ func _on_button_move_right_pressed() -> void:
 	$HBoxContainer/VBoxContainer/LabelResult.text = str(response)
 
 func _on_button_move_left_pressed() -> void:
-	EventBus.move_left.emit()
+	EventBus.move_left.emit(0)
 	var response = await EventBus.check_is_arrived
 	for btn in buttons:
 		btn.disabled = true
@@ -54,7 +54,7 @@ func _on_button_move_left_pressed() -> void:
 
 
 func _on_button_jump_right_pressed() -> void:
-	EventBus.jump_right.emit()
+	EventBus.jump_right.emit(0)
 	var response = await EventBus.check_is_arrived
 	for btn in buttons:
 		btn.disabled = true
@@ -65,7 +65,7 @@ func _on_button_jump_right_pressed() -> void:
 
 
 func _on_button_jump_left_pressed() -> void:
-	EventBus.jump_left.emit()
+	EventBus.jump_left.emit(0)
 	var response = await EventBus.check_is_arrived
 	for btn in buttons:
 		btn.disabled = true
@@ -76,7 +76,7 @@ func _on_button_jump_left_pressed() -> void:
 
 
 func _on_button_check_right_pressed() -> void:
-	EventBus.check_obj_right.emit()
+	EventBus.check_obj_right.emit(0)
 	var response = await EventBus.check_obj_right_response
 	for btn in buttons:
 		btn.disabled = true
@@ -86,7 +86,7 @@ func _on_button_check_right_pressed() -> void:
 
 
 func _on_button_check_left_pressed() -> void:
-	EventBus.check_obj_left.emit()
+	EventBus.check_obj_left.emit(0)
 	var response = await EventBus.check_obj_left_response
 	for btn in buttons:
 		btn.disabled = true
@@ -96,7 +96,7 @@ func _on_button_check_left_pressed() -> void:
 
 
 func _on_button_check_under_pressed() -> void:
-	EventBus.check_obj_under.emit()
+	EventBus.check_obj_under.emit(0)
 	var response = await EventBus.check_obj_under_response
 	for btn in buttons:
 		btn.disabled = true
@@ -106,7 +106,7 @@ func _on_button_check_under_pressed() -> void:
 
 
 func _on_button_check_fell_pressed() -> void:
-	EventBus.check_just_fell.emit()
+	EventBus.check_just_fell.emit(0)
 	var response = await EventBus.check_just_fell_response
 	for btn in buttons:
 		btn.disabled = true

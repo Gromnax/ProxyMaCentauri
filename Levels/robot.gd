@@ -129,19 +129,19 @@ func fall():
 # ACTIONS
 # --------------------------------------------------
 
-func on_move_right():
+func on_move_right(id:int):
 	await try_move(Vector2i.RIGHT)
 	current_movement = MOVEMENT.GROUNDED
 
-func on_move_left():
+func on_move_left(id:int):
 	await try_move(Vector2i.LEFT)
 	current_movement = MOVEMENT.GROUNDED
 	
-func on_jump_right():
+func on_jump_right(id:int):
 	await try_move(Vector2i(1, -1))
 	current_movement = MOVEMENT.GROUNDED
 
-func on_jump_left():
+func on_jump_left(id:int):
 	await try_move(Vector2i(-1, -1))
 	current_movement = MOVEMENT.GROUNDED
 	
@@ -149,29 +149,29 @@ func on_jump_left():
 # CHECKS
 # --------------------------------------------------
 
-func on_check_obj_right():
+func on_check_obj_right(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.RIGHT
 	await get_tree().process_frame
-	EventBus.check_obj_right_response.emit(is_blocked(side))
+	EventBus.check_obj_right_response.emit(id, is_blocked(side))
 	
-func on_check_obj_left():
+func on_check_obj_left(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.LEFT
 	await get_tree().process_frame
-	EventBus.check_obj_left_response.emit(is_blocked(side))
+	EventBus.check_obj_left_response.emit(id, is_blocked(side))
 	
-func on_check_obj_under():
+func on_check_obj_under(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.DOWN
 	await get_tree().process_frame
-	EventBus.check_obj_under_response.emit(is_blocked(side))
+	EventBus.check_obj_under_response.emit(id, is_blocked(side))
 	
-func on_check_just_fell():
+func on_check_just_fell(id:int):
 	var response = false
 	if current_movement == MOVEMENT.FALLING:
 		response = true
-	EventBus.check_just_fell_response.emit(response)
+	EventBus.check_just_fell_response.emit(id, response)
 		
 func win():
 	PreloadBus.change_level("win_menu")
