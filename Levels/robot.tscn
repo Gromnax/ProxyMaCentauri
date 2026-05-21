@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dalqt0qo5f3qe"]
+
+[ext_resource type="Script" uid="uid://bssbhhk3pgrmg" path="res://Levels/robot.gd" id="1_p6os6"]
+[ext_resource type="Texture2D" uid="uid://dd0hhnscilhyb" path="res://Assets/Characters/placeholder_character.png" id="2_bkv1r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0ila"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bkv1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Robot" type="Node2D" unique_id=160015996]
+script = ExtResource("1_p6os6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1261820221]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_q0ila")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=474545893]
+position = Vector2(0, -32)
+enabled = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=288040517]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=505984353]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
