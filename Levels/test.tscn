@@ -447,7 +447,6 @@ grow_vertical = 0
 [node name="ControlGraph" parent="CanvasLayer/Control/VBoxContainer" unique_id=633943305 instance=ExtResource("9_7t67w")]
 custom_minimum_size = Vector2(1800, 300)
 layout_mode = 2
-scroll_offset = Vector2(0, -300)
 
 [node name="ControlNoCodeDebug" type="Control" parent="CanvasLayer/Control/VBoxContainer" unique_id=1905153014]
 visible = false
