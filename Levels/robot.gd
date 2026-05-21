@@ -85,7 +85,6 @@ func should_fall() -> bool:
 	var current = world_to_cell(global_position)
 	var below = current + Vector2i.DOWN
 
-	
 	return not is_blocked(below)
 		
 func fall():
@@ -130,19 +129,19 @@ func fall():
 # --------------------------------------------------
 
 func on_move_right(id:int):
-	await try_move(Vector2i.RIGHT)
+	try_move(Vector2i.RIGHT)
 	current_movement = MOVEMENT.GROUNDED
 
 func on_move_left(id:int):
-	await try_move(Vector2i.LEFT)
+	try_move(Vector2i.LEFT)
 	current_movement = MOVEMENT.GROUNDED
 	
 func on_jump_right(id:int):
-	await try_move(Vector2i(1, -1))
+	try_move(Vector2i(1, -1))
 	current_movement = MOVEMENT.GROUNDED
 
 func on_jump_left(id:int):
-	await try_move(Vector2i(-1, -1))
+	try_move(Vector2i(-1, -1))
 	current_movement = MOVEMENT.GROUNDED
 	
 # --------------------------------------------------
