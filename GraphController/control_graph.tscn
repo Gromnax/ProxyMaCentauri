@@ -12,7 +12,6 @@ offset_bottom = 40.0
 custom_minimum_size = Vector2(1900, 300)
 layout_mode = 2
 size_flags_horizontal = 4
-scroll_offset = Vector2(-300, 0)
 right_disconnects = true
 connections = Array[Dictionary]([{
 "from_node": &"SomeGraphNode2",
@@ -26,9 +25,9 @@ script = ExtResource("1_h076a")
 
 [node name="PulsarNode" parent="GraphEdit" unique_id=2041580164 instance=ExtResource("2_rndvx")]
 layout_mode = 0
-offset_left = 573.0
+offset_left = 273.0
 offset_top = 325.0
-offset_right = 736.0
+offset_right = 436.0
 offset_bottom = 405.0
 mouse_filter = 1
 position_offset = Vector2(273, 325)
@@ -36,9 +35,9 @@ position_offset = Vector2(273, 325)
 [node name="CheckConditionNode(WIP)" type="GraphNode" parent="GraphEdit" unique_id=466680463 node_paths=PackedStringArray("timer")]
 visible = false
 layout_mode = 0
-offset_left = 1390.0
+offset_left = 1090.0
 offset_top = 160.0
-offset_right = 1560.0
+offset_right = 1260.0
 offset_bottom = 265.0
 mouse_filter = 1
 position_offset = Vector2(1090, 160)
@@ -93,6 +92,14 @@ text = "Add Move"
 layout_mode = 2
 text = "Add Pulsar"
 
+[node name="PulsarOnceButton" type="Button" parent="VFlowContainer" unique_id=903288526]
+layout_mode = 2
+text = "Add Pulsar Once"
+
+[node name="PulsarClicButton" type="Button" parent="VFlowContainer" unique_id=1233397444]
+layout_mode = 2
+text = "Add Pulsar Clic"
+
 [node name="PrintButton" type="Button" parent="VFlowContainer" unique_id=376034712]
 layout_mode = 2
 text = "Add Printer"
@@ -107,5 +114,7 @@ text = "Add Counter (WIP)"
 [connection signal="timeout" from="GraphEdit/CheckConditionNode(WIP)/Timer" to="GraphEdit/CheckConditionNode(WIP)" method="_on_timer_timeout"]
 [connection signal="pressed" from="VFlowContainer/MoveButton" to="GraphEdit" method="_on_move_button_pressed"]
 [connection signal="pressed" from="VFlowContainer/PulsarButton" to="GraphEdit" method="_on_pulsar_button_pressed"]
+[connection signal="pressed" from="VFlowContainer/PulsarOnceButton" to="GraphEdit" method="_on_pulsar_once_button_pressed"]
+[connection signal="pressed" from="VFlowContainer/PulsarClicButton" to="GraphEdit" method="_on_pulsar_clic_button_pressed"]
 [connection signal="pressed" from="VFlowContainer/PrintButton" to="GraphEdit" method="_on_print_button_pressed"]
 [connection signal="pressed" from="VFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]

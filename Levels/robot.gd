@@ -52,7 +52,7 @@ func is_blocked(cell: Vector2i) -> bool:
 # MOVEMENT
 # --------------------------------------------------
 
-func try_move(dir: Vector2i):
+func try_move(id : int, dir: Vector2i) -> void:
 	if is_moving:
 		return
 
@@ -61,7 +61,7 @@ func try_move(dir: Vector2i):
 
 	# Wall collision
 	if is_blocked(target_cell):
-		EventBus.check_is_arrived.emit(false)
+		EventBus.check_is_arrived.emit(id, false)
 		return
 	is_moving = true
 
@@ -78,7 +78,7 @@ func try_move(dir: Vector2i):
 	await tween.finished
 
 	is_moving = false
-	EventBus.check_is_arrived.emit(true)
+	EventBus.check_is_arrived.emit(id, true)
 
 func should_fall() -> bool:
 
@@ -130,19 +130,19 @@ func fall():
 # --------------------------------------------------
 
 func on_move_right(id:int):
-	await try_move(Vector2i.RIGHT)
+	await try_move(id, Vector2i.RIGHT)
 	current_movement = MOVEMENT.GROUNDED
 
 func on_move_left(id:int):
-	await try_move(Vector2i.LEFT)
+	await try_move(id, Vector2i.LEFT)
 	current_movement = MOVEMENT.GROUNDED
 	
 func on_jump_right(id:int):
-	await try_move(Vector2i(1, -1))
+	await try_move(id, Vector2i(1, -1))
 	current_movement = MOVEMENT.GROUNDED
 
 func on_jump_left(id:int):
-	await try_move(Vector2i(-1, -1))
+	await try_move(id, Vector2i(-1, -1))
 	current_movement = MOVEMENT.GROUNDED
 	
 # --------------------------------------------------

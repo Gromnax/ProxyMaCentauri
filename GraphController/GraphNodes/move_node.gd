@@ -30,9 +30,11 @@ func signal_received(_port: int, _value:String="") -> void:
 		1:
 			EventBus.move_left.emit(request)
 			request_sent = true
+			print("gauche")
 		2:
 			EventBus.move_right.emit(request)
 			request_sent = true
+			print("droite")
 		3:
 			pass
 		_:

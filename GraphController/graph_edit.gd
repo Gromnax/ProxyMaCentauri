@@ -3,7 +3,9 @@ class_name GraphControlEdit
 
 var move_scene = preload("res://GraphController/GraphNodes/MoveNode.tscn")
 var pulsar_scene = preload("res://GraphController/GraphNodes/PulsarNode.tscn")
+var pulsar_once_scene = preload("res://GraphController/GraphNodes/PulsarNodeOnce.tscn")
 var print_scene = preload("res://GraphController/GraphNodes/Printer.tscn")
+var pulsar_clic_scene = preload("res://GraphController/GraphNodes/PulsarNodeClic.tscn")
 
 var child_number: int = 0
 
@@ -87,3 +89,17 @@ func _on_print_button_pressed() -> void:
 
 func _on_counter_button_pressed() -> void:
 	print("Pas encore prêt")
+
+
+func _on_pulsar_once_button_pressed() -> void:
+	var new_node : PulsarNode = pulsar_once_scene.instantiate()
+	new_node.set_name("GraphControlNode"+str(child_number))
+	child_number = child_number +1
+	add_child(new_node)
+
+
+func _on_pulsar_clic_button_pressed() -> void:
+	var new_node : PulsarClic = pulsar_clic_scene.instantiate()
+	new_node.set_name("GraphControlNode"+str(child_number))
+	child_number = child_number +1
+	add_child(new_node)

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cymnjyspdlfp5"]
+
+[ext_resource type="Script" uid="uid://pquh0r6dx7g3" path="res://GraphController/GraphNodes/pulsar_node_clic.gd" id="1_cskpv"]
+
+[node name="PulsarClic" type="GraphNode" unique_id=2041580164]
+offset_right = 9.0
+offset_bottom = 55.0
+title = "Pulsar Once"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_cskpv")
+metadata/_custom_type_script = "uid://dmg65t0orfe1c"
+
+[node name="Timer" type="Timer" parent="." unique_id=441151500]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Container" type="AspectRatioContainer" parent="." unique_id=293459404]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container" unique_id=1133058822]
+layout_mode = 2
+text = "Send pulse"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Container/Button" to="." method="_on_button_pressed"]
