@@ -1,5 +1,6 @@
 extends GraphControlNode
-class_name Printer
+class_name PulsarClic
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +12,12 @@ func _process(delta: float) -> void:
 	pass
 
 
-func on_unhandled_signal_received(args: Array=[]) -> void:
-	print("Signal received!")
+func on_unhandled_signal_received(_args: Dictionary={}) -> void:
+	pass
+
+func signal_received(_port: int, _value:String="") -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	output.emit(self, 0, "manual pulse")

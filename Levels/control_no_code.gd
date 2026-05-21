@@ -12,27 +12,28 @@ extends Control
 ]
 
 func _ready() -> void:
+	pass
 	# IMPORTANT : Le check_is_arrived et tout les reponse doivent etre précisement aprés le check.
 	# Si il y a une ligne de code entre nottament une boucle, il attendra le signal qui est déja passé.
 	# Forcer un delai est possible mais inconsistent.
-	EventBus.move_right.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_right.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_right.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_right.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_right.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_left.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_left.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_left.emit(0)
-	await EventBus.check_is_arrived
-	EventBus.move_left.emit(0)
-	await EventBus.check_is_arrived
+	#EventBus.move_right.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_right.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_right.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_right.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_right.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_left.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_left.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_left.emit(0)
+	#await EventBus.check_is_arrived
+	#EventBus.move_left.emit(0)
+	#await EventBus.check_is_arrived
 
 func _on_button_move_right_pressed() -> void:
 	EventBus.move_right.emit(0)

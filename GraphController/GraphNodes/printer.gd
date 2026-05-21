@@ -1,7 +1,5 @@
 extends GraphControlNode
-class_name PulsarNode
-
-@export var timer: Timer
+class_name Printer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func on_unhandled_signal_received(args: Array=[]) -> void:
-	pass
+func on_unhandled_signal_received(args: Dictionary={}) -> void:
+	print("Signal received!")
 
-
-func _on_timer_timeout() -> void:
-	output.emit()
-	print("Timer timeout!!")
+func signal_received(port: int, value:String="") -> void:
+	print("Received value: " + value + " on port " + str(port))
