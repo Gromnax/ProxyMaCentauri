@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bafqingwbaiws"]
+
+[ext_resource type="Script" uid="uid://cxn81xa08pwtf" path="res://GraphController/GraphNodes/move_node.gd" id="1_rqu53"]
+
+[node name="MoveNode" type="GraphNode" unique_id=346927104 node_paths=PackedStringArray("item_list")]
+title = "Move "
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = true
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+script = ExtResource("1_rqu53")
+item_list = NodePath("Container/ItemList")
+
+[node name="Container" type="AspectRatioContainer" parent="." unique_id=793594589]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="Container" unique_id=403694219]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+allow_reselect = true
+auto_width = true
+auto_height = true
+item_count = 4
+item_0/text = "Up"
+item_1/text = "Left"
+item_2/text = "Right"
+item_3/text = "Down"
+
+[node name="Container2" type="AspectRatioContainer" parent="." unique_id=184571717]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container2" unique_id=932829704]
+layout_mode = 2
+text = "Move completed"
+
+[node name="Container3" type="AspectRatioContainer" parent="." unique_id=512395729]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container3" unique_id=1016491370]
+layout_mode = 2
+text = "Move failed"

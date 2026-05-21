@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4o1323va1pb"]
 
-[ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/pulsar_node.gd" id="1_32qu6"]
+[ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="1_32qu6"]
 
 [node name="PulsarNode" type="GraphNode" unique_id=2041580164 node_paths=PackedStringArray("timer")]
 offset_right = 9.0
@@ -22,8 +22,11 @@ metadata/_custom_type_script = "uid://dmg65t0orfe1c"
 [node name="Timer" type="Timer" parent="." unique_id=441151500]
 autostart = true
 
-[node name="Label" type="Label" parent="." unique_id=485080353]
+[node name="Container" type="AspectRatioContainer" parent="." unique_id=293459404]
 layout_mode = 2
-text = "Every second"
+
+[node name="Label" type="Label" parent="Container" unique_id=1727136123]
+layout_mode = 2
+text = "1s Timer"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

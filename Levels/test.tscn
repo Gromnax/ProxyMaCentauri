@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dalqt0qo5f3qe" path="res://Levels/robot.tscn" id="5_mkyii"]
 [ext_resource type="Texture2D" uid="uid://dd0hhnscilhyb" path="res://Assets/Characters/placeholder_character.png" id="5_oe5jq"]
 [ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="7_mkyii"]
+[ext_resource type="PackedScene" uid="uid://d2xked7pqiy7r" path="res://GraphController/control_graph.tscn" id="9_7t67w"]
 [ext_resource type="Script" uid="uid://6teyb5tdjs8" path="res://Levels/control_no_code.gd" id="9_q0ila"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oe5jq"]
@@ -433,142 +434,152 @@ disabled = true
 toggle_mode = true
 text = "Retry (3 left)"
 
-[node name="ControlNoCodeDebug" type="Control" parent="CanvasLayer/Control" unique_id=1905153014]
+[node name="VBoxContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=1785459866]
 layout_mode = 1
-anchor_top = 0.7
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -335.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="ControlGraph" parent="CanvasLayer/Control/VBoxContainer" unique_id=633943305 instance=ExtResource("9_7t67w")]
+custom_minimum_size = Vector2(1800, 300)
+layout_mode = 2
+
+[node name="ControlNoCodeDebug" type="Control" parent="CanvasLayer/Control/VBoxContainer" unique_id=1905153014]
+visible = false
+layout_mode = 2
 script = ExtResource("9_q0ila")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug" unique_id=838463271]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" unique_id=838463271]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=1296423973]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=1296423973]
 layout_mode = 2
 
-[node name="ButtonMoveRight" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer" unique_id=780865084]
+[node name="ButtonMoveRight" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer" unique_id=780865084]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Move right"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer" unique_id=848685497]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer" unique_id=848685497]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=132018460]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=132018460]
 layout_mode = 2
 
-[node name="ButtonMoveLeft" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer2" unique_id=1892232627]
+[node name="ButtonMoveLeft" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer2" unique_id=1892232627]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Move left"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer2" unique_id=1224104118]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer2" unique_id=1224104118]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=1446993361]
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=1446993361]
 layout_mode = 2
 
-[node name="ButtonJumpRight" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer3" unique_id=1342418567]
+[node name="ButtonJumpRight" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer3" unique_id=1342418567]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Jump right"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer3" unique_id=36234315]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer3" unique_id=36234315]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=2128617132]
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=2128617132]
 layout_mode = 2
 
-[node name="ButtonJumpLeft" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer4" unique_id=173775518]
+[node name="ButtonJumpLeft" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer4" unique_id=173775518]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "jump left"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer4" unique_id=162745548]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer4" unique_id=162745548]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=162958684]
+[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=162958684]
 layout_mode = 2
 
-[node name="ButtonCheckRight" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer5" unique_id=119208797]
+[node name="ButtonCheckRight" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer5" unique_id=119208797]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Check right"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer5" unique_id=1517442516]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer5" unique_id=1517442516]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=242955552]
+[node name="VBoxContainer6" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=242955552]
 layout_mode = 2
 
-[node name="ButtonCheckLeft" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer6" unique_id=1291813452]
+[node name="ButtonCheckLeft" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer6" unique_id=1291813452]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Check Left"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer6" unique_id=1537986990]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer6" unique_id=1537986990]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer7" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=622258037]
+[node name="VBoxContainer7" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=622258037]
 layout_mode = 2
 
-[node name="ButtonCheckUnder" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer7" unique_id=1074354322]
+[node name="ButtonCheckUnder" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer7" unique_id=1074354322]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Check Under"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer7" unique_id=1929990865]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer7" unique_id=1929990865]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
 theme_override_font_sizes/normal_font_size = 24
 text = "Result"
 
-[node name="VBoxContainer8" type="VBoxContainer" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer" unique_id=308455387]
+[node name="VBoxContainer8" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer" unique_id=308455387]
 layout_mode = 2
 
-[node name="ButtonCheckFell" type="Button" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer8" unique_id=1951862527]
+[node name="ButtonCheckFell" type="Button" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer8" unique_id=1951862527]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_mkyii")
 theme_override_font_sizes/font_size = 24
 text = "Check just fell"
 
-[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer8" unique_id=662295853]
+[node name="LabelResult" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer8" unique_id=662295853]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("7_mkyii")
@@ -580,11 +591,11 @@ position = Vector2(960, 540)
 
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry" to="." method="_on_button_retry_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer/ButtonMoveRight" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_move_right_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer2/ButtonMoveLeft" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_move_left_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer3/ButtonJumpRight" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_jump_right_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer4/ButtonJumpLeft" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_jump_left_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer5/ButtonCheckRight" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_check_right_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer6/ButtonCheckLeft" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_check_left_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer7/ButtonCheckUnder" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_check_under_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/ControlNoCodeDebug/HBoxContainer/VBoxContainer8/ButtonCheckFell" to="CanvasLayer/Control/ControlNoCodeDebug" method="_on_button_check_fell_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer/ButtonMoveRight" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_move_right_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer2/ButtonMoveLeft" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_move_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer3/ButtonJumpRight" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_jump_right_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer4/ButtonJumpLeft" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_jump_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer5/ButtonCheckRight" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_check_right_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer6/ButtonCheckLeft" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_check_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer7/ButtonCheckUnder" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_check_under_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer8/ButtonCheckFell" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_check_fell_pressed"]

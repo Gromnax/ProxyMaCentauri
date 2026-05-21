@@ -9,14 +9,17 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
-func on_unhandled_signal_received(args: Array=[]) -> void:
+func on_unhandled_signal_received(_args: Dictionary={}) -> void:
 	pass
 
 
 func _on_timer_timeout() -> void:
-	output.emit()
-	print("Timer timeout!!")
+	output.emit(self, 0, "hello there")
+
+## @unused This GraphNode has no entry point, this is by design.
+func signal_received(_port: int, _value:String="") -> void:
+	pass
