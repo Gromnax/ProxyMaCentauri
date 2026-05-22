@@ -1,10 +1,8 @@
 extends Control
 
-@export var bypass : bool = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if bypass : start_game()
+	if not PreloadBus.resources["options"].cinematic : start_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

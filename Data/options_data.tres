@@ -6,3 +6,5 @@
 script = ExtResource("1_pgoju")
 bgm_volume = 0.2
 sfx_volume = 0.1
+full_screen = true
+cinematic = false

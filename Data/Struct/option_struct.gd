@@ -18,6 +18,12 @@ var screen_option
 		full_screen = new_value
 		if OS.get_name() not in ["Web", "HTML5"]:
 			save()
+			
+@export var cinematic : bool = true :
+	set(new_value):
+		cinematic = new_value
+		if OS.get_name() not in ["Web", "HTML5"]:
+			save()
 
 func save() -> void :
 	ResourceSaver.save(self, "res://Data/options_data.tres")
