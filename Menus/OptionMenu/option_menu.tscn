@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="3_f0s6s"]
 [ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="4_r73as"]
 [ext_resource type="Script" uid="uid://cjy0dm0b5x7gw" path="res://Menus/OptionMenu/h_box_toogle.gd" id="7_5g8k6"]
+[ext_resource type="Script" uid="uid://b22hylehpy5mb" path="res://Menus/OptionMenu/h_box_tooglecinematic.gd" id="8_333eg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1c55"]
 bg_color = Color(0.09019608, 0.08627451, 0.101960786, 1)
@@ -311,8 +312,64 @@ step = 0.1
 value = 1.2
 custom_step = 0.1
 
+[node name="HBoxCinematic" type="HBoxContainer" parent="HBoxBody" unique_id=1876894643]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="LabelCinematic" type="RichTextLabel" parent="HBoxBody/HBoxCinematic" unique_id=992753715]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("1_2j4fr")
+theme_override_fonts/bold_font = ExtResource("2_i7mvv")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+text = "Start cinematic"
+vertical_alignment = 1
+
+[node name="HBoxToogle" type="HBoxContainer" parent="HBoxBody/HBoxCinematic" unique_id=1882724210]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+script = ExtResource("8_333eg")
+
+[node name="ButtonOn" type="Button" parent="HBoxBody/HBoxCinematic/HBoxToogle" unique_id=443072924]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 0.4117647)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_2j4fr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_333eg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/hover = SubResource("StyleBoxFlat_31yhm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/focus = SubResource("StyleBoxFlat_31yhm")
+toggle_mode = true
+text = "Yes"
+
+[node name="ButtonOff" type="Button" parent="HBoxBody/HBoxCinematic/HBoxToogle" unique_id=83794409]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 0.4117647)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_2j4fr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_333eg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/hover = SubResource("StyleBoxFlat_31yhm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7u7no")
+theme_override_styles/focus = SubResource("StyleBoxFlat_31yhm")
+toggle_mode = true
+text = "No"
+
 [connection signal="pressed" from="VBoxFooter/ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="HBoxBody/HBoxScreen/Control/HBoxToogle/ButtonOn" to="HBoxBody/HBoxScreen/Control/HBoxToogle" method="_on_button_on_pressed"]
 [connection signal="pressed" from="HBoxBody/HBoxScreen/Control/HBoxToogle/ButtonOff" to="HBoxBody/HBoxScreen/Control/HBoxToogle" method="_on_button_off_pressed"]
 [connection signal="value_changed" from="HBoxBody/HBoxSFX/Control/HScrollBarSFX" to="." method="_on_h_scroll_bar_sfx_value_changed"]
 [connection signal="value_changed" from="HBoxBody/HBoxBGM/Control/HScrollBarBGM" to="." method="_on_h_scroll_bar_bgm_value_changed"]
+[connection signal="pressed" from="HBoxBody/HBoxCinematic/HBoxToogle/ButtonOn" to="HBoxBody/HBoxCinematic/HBoxToogle" method="_on_button_on_pressed"]
+[connection signal="pressed" from="HBoxBody/HBoxCinematic/HBoxToogle/ButtonOff" to="HBoxBody/HBoxCinematic/HBoxToogle" method="_on_button_off_pressed"]
