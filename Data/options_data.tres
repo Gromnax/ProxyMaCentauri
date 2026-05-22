@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_pgoju")
-bgm_volume = 0.0
+bgm_volume = 0.2
+sfx_volume = 0.1

@@ -85,7 +85,6 @@ func should_fall() -> bool:
 	var current = world_to_cell(global_position)
 	var below = current + Vector2i.DOWN
 
-	
 	return not is_blocked(below)
 		
 func fall():

@@ -2,6 +2,7 @@ extends Node
 
 ## All preloaded scenes are here. A scene is a file with .tscn extension
 var scenes = {
+	"start_cinematic" : preload("res://Menus/StartCinematic/start_cinematic.tscn"),
 	"main_menu" : preload("res://Menus/MainMenu/main_menu.tscn"),
 	"option_menu" : preload("res://Menus/OptionMenu/option_menu.tscn"),
 	"defeat_menu" : preload("res://Menus/DefeatMenu/defeat_menu.tscn"),
@@ -24,6 +25,11 @@ var bgm = {
 	"main" = preload("res://Assets/Bgm/main.mp3"),
 	"main_loop" = preload("res://Assets/Bgm/main_loop.mp3"),
 	"title" = preload("res://Assets/Bgm/title.mp3"),
+}
+
+var sfx = {
+	"hover" = preload("res://Assets/Sfx/hover.ogg"),
+	"click" = preload("res://Assets/Sfx/click.ogg"),
 }
 ## All references are here. They can be accessed by root
 ## Might need to change place in a later date

@@ -1,13 +1,15 @@
-extends Node
+extends Control
 
+@export var bypass : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	PreloadBus.change_level("start_cinematic")
-	AudioBus.update_bgm_volume(PreloadBus.resources["options"].bgm_volume)
-	AudioBus.update_sfx_volume(PreloadBus.resources["options"].sfx_volume)
+	if bypass : start_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func start_game():
+	PreloadBus.change_level("main_menu")
