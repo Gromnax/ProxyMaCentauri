@@ -19,6 +19,10 @@ run/main_scene="uid://d0bxvctw13g7k"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://e3cfhnw0akwa"
+
 [autoload]
 
 EventBus="*uid://c3asprat4mqxv"
@@ -34,11 +38,6 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="ProxyMaCentauri"
-
-[global_group]
-
-bgm=""
-sfx=""
 
 [input]
 

@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://bt1i2slsbehd6"]
+
+[ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="1_537n6"]
+[ext_resource type="Script" uid="uid://dggdsk8qrkrc4" path="res://Menus/StartCinematic/start_cinematic.gd" id="1_ocb3j"]
+[ext_resource type="Texture2D" uid="uid://dnp41s027t85g" path="res://Assets/UI/Circles.png" id="2_ocb3j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emex3"]
+bg_color = Color(0.09019608, 0.08627451, 0.101960786, 1)
+
+[sub_resource type="Animation" id="Animation_wut0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j2pmp"]
+resource_name = "story"
+length = 7.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 1.1433333, 2.1333332),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 2.2, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.6, 4.1, 5.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.2, 4.7, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel6:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.633333, 5.133333, 6.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RichTextLabel7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6.0333333, 6.5333333, 7.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRectCircles:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 7, 7.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(7.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_game"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l383m"]
+_data = {
+&"RESET": SubResource("Animation_wut0h"),
+&"story": SubResource("Animation_j2pmp")
+}
+
+[node name="StartCinematic" type="Control" unique_id=557270167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ocb3j")
+bypass = true
+
+[node name="PanelBg" type="Panel" parent="." unique_id=907692940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emex3")
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="." unique_id=1942519707]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 100.0
+offset_right = 408.0
+offset_bottom = 170.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "Hou..ston...."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1033410752]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 310.0
+offset_top = 174.0
+offset_right = 592.0
+offset_bottom = 244.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "Hou..ston...."
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1443448979]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 236.0
+offset_top = 336.0
+offset_right = 659.0
+offset_bottom = 406.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "The ship... down..."
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=1336077109]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1187.0
+offset_top = 465.0
+offset_right = 1610.0
+offset_bottom = 535.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "Charlie"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="." unique_id=1193069596]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1322.0
+offset_top = 550.0
+offset_right = 1776.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "We are sending help"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="." unique_id=409349449]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1188.0
+offset_top = 626.0
+offset_right = 1642.0
+offset_bottom = 696.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "Hold on"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="." unique_id=623112661]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 726.0
+offset_right = 1629.0
+offset_bottom = 796.0
+theme_override_fonts/normal_font = ExtResource("1_537n6")
+theme_override_font_sizes/normal_font_size = 48
+text = "Prepare the robot"
+
+[node name="TextureRectCircles" type="TextureRect" parent="." unique_id=1405900843]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.5
+anchor_bottom = 0.98
+offset_left = -518.4
+offset_right = 518.4
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ocb3j")
+expand_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1918635413]
+libraries/ = SubResource("AnimationLibrary_l383m")
+autoplay = &"story"
