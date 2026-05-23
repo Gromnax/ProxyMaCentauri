@@ -28,7 +28,9 @@ func signal_received(_port: int, _value:String="") -> void:
 
 	match selected_items[0]:
 		0:
-			pass
+			EventBus.jump_left.emit(request)
+			request_sent = true
+			print("jump gauche")
 		1:
 			EventBus.move_left.emit(request)
 			request_sent = true
@@ -38,7 +40,9 @@ func signal_received(_port: int, _value:String="") -> void:
 			request_sent = true
 			print("droite")
 		3:
-			pass
+			EventBus.jump_right.emit(request)
+			request_sent = true
+			print("jump droite")
 		_:
 			pass
 	if request_sent:
