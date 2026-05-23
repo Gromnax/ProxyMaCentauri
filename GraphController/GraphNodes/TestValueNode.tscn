@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bwkncfrmf8081"]
+
+[ext_resource type="Script" uid="uid://oo7q11e1kgyq" path="res://GraphController/GraphNodes/test_value_node.tscn.gd" id="1_i3o27"]
+
+[node name="TestValueNode" type="GraphNode" unique_id=1662474118]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1752.0
+offset_bottom = -919.0
+grow_horizontal = 2
+grow_vertical = 2
+title = "Test Value Node"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = true
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = true
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+script = ExtResource("1_i3o27")
+
+[node name="ValueLabel" type="Label" parent="." unique_id=1200307393]
+layout_mode = 2
+text = "Value"
+horizontal_alignment = 2
+
+[node name="Container2" type="HBoxContainer" parent="." unique_id=1067202230]
+layout_mode = 2
+alignment = 2
+
+[node name="OptionButton" type="OptionButton" parent="Container2" unique_id=1887530103]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 6
+popup/item_0/text = "="
+popup/item_0/id = 0
+popup/item_1/text = "≠"
+popup/item_1/id = 1
+popup/item_2/text = ">"
+popup/item_2/id = 2
+popup/item_3/text = "≥"
+popup/item_3/id = 3
+popup/item_4/text = "<"
+popup/item_4/id = 4
+popup/item_5/text = "≤"
+popup/item_5/id = 5
+
+[node name="ValueButton" type="SpinBox" parent="Container2" unique_id=1292939448]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="TrueLabel" type="Label" parent="." unique_id=627627035]
+unique_name_in_owner = true
+layout_mode = 2
+text = "True"
+horizontal_alignment = 2
+
+[node name="FalseLabel" type="Label" parent="." unique_id=1867202467]
+unique_name_in_owner = true
+layout_mode = 2
+text = "False"
+horizontal_alignment = 2
+
+[connection signal="value_changed" from="Container2/ValueButton" to="." method="_on_button_value_changed"]
