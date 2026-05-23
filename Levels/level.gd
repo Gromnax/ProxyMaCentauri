@@ -24,6 +24,7 @@ func _on_button_start_pressed() -> void:
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.disabled = true
 	$Robot/Camera2D.enabled = true
 	$Camera2DOverview.enabled = false
+	$CanvasLayer/Control/VBoxContainer.hide()
 
 func _on_button_retry_pressed() -> void:
 	current_phase = PHASE.PLANNING
@@ -33,6 +34,8 @@ func _on_button_retry_pressed() -> void:
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.disabled = false
 	$Robot/Camera2D.enabled = false
 	$Camera2DOverview.enabled = true
+	$CanvasLayer/Control/VBoxContainer.show()
+	$Robot.global_position = start_position
 	
 func update_ui_retry():
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.text = "Retry (%s left)" % str(current_try - 1)
