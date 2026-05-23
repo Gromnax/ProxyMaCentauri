@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
 [ext_resource type="PackedScene" uid="uid://4o1323va1pb" path="res://GraphController/GraphNodes/PulsarNode.tscn" id="2_rndvx"]
 [ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="3_m0dpa"]
+[ext_resource type="PackedScene" uid="uid://bwkncfrmf8081" path="res://GraphController/GraphNodes/TestValueNode.tscn" id="4_m0dpa"]
+[ext_resource type="PackedScene" uid="uid://dfncvt36vs88i" path="res://GraphController/GraphNodes/CounterNode.tscn" id="5_2rf5d"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=952697314]
 anchors_preset = 15
@@ -125,6 +127,24 @@ layout_mode = 2
 [node name="Label" type="Label" parent="GraphEdit/CheckConditionNode(WIP)/Container2" unique_id=897145678]
 layout_mode = 2
 text = "False"
+
+[node name="TestValueNode" parent="GraphEdit" unique_id=1662474118 instance=ExtResource("4_m0dpa")]
+layout_mode = 1
+offset_left = 676.0
+offset_top = 90.0
+offset_right = -1076.0
+offset_bottom = -829.0
+mouse_filter = 1
+position_offset = Vector2(676, 90)
+
+[node name="CounterNode" parent="GraphEdit" unique_id=1105712228 instance=ExtResource("5_2rf5d")]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 318.0
+offset_right = 727.0
+offset_bottom = 462.0
+mouse_filter = 1
+position_offset = Vector2(555, 318)
 
 [connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
