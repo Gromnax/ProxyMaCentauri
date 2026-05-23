@@ -45,8 +45,8 @@ func signal_received(_port: int, _value:String="") -> void:
 		request_ids.push_back(request)
 	
 func feedback_received(feedback_id : int, move_success: bool) -> void:
-	if not feedback_id in request_ids:
-		pass
+	if request_ids.find(feedback_id)==-1:
+		return
 	request_ids.erase(feedback_id)
 	if move_success:
 		output.emit(self, 0, "moved")
