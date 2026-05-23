@@ -5,13 +5,15 @@
 [ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="3_m0dpa"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=952697314]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GraphEdit" type="GraphEdit" parent="." unique_id=1604591377]
-custom_minimum_size = Vector2(1900, 300)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 3
 right_disconnects = true
 connections = Array[Dictionary]([{
 "from_node": &"SomeGraphNode2",
@@ -22,6 +24,49 @@ connections = Array[Dictionary]([{
 }])
 show_zoom_label = true
 script = ExtResource("1_h076a")
+
+[node name="PopupMenu" type="Control" parent="GraphEdit" unique_id=1836525246]
+visible = false
+z_index = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GraphEdit/PopupMenu" unique_id=944400668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="VBoxContainer" parent="GraphEdit/PopupMenu/ScrollContainer" unique_id=857684392]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoveButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=900490871]
+layout_mode = 2
+text = "Add Move"
+
+[node name="PulsarButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1274332163]
+layout_mode = 2
+text = "Add Pulsar"
+
+[node name="PulsarOnceButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=903288526]
+layout_mode = 2
+text = "Add Pulsar Once"
+
+[node name="PulsarClicButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1233397444]
+layout_mode = 2
+text = "Add Pulsar Clic"
+
+[node name="PrintButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=376034712]
+layout_mode = 2
+text = "Add Printer"
+
+[node name="CounterButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=2052313127]
+layout_mode = 2
+text = "Add Counter (WIP)"
 
 [node name="PulsarNode" parent="GraphEdit" unique_id=2041580164 instance=ExtResource("2_rndvx")]
 layout_mode = 0
@@ -81,40 +126,13 @@ layout_mode = 2
 layout_mode = 2
 text = "False"
 
-[node name="VFlowContainer" type="VFlowContainer" parent="." unique_id=2093147851]
-layout_mode = 2
-
-[node name="MoveButton" type="Button" parent="VFlowContainer" unique_id=900490871]
-layout_mode = 2
-text = "Add Move"
-
-[node name="PulsarButton" type="Button" parent="VFlowContainer" unique_id=1274332163]
-layout_mode = 2
-text = "Add Pulsar"
-
-[node name="PulsarOnceButton" type="Button" parent="VFlowContainer" unique_id=903288526]
-layout_mode = 2
-text = "Add Pulsar Once"
-
-[node name="PulsarClicButton" type="Button" parent="VFlowContainer" unique_id=1233397444]
-layout_mode = 2
-text = "Add Pulsar Clic"
-
-[node name="PrintButton" type="Button" parent="VFlowContainer" unique_id=376034712]
-layout_mode = 2
-text = "Add Printer"
-
-[node name="CounterButton" type="Button" parent="VFlowContainer" unique_id=2052313127]
-layout_mode = 2
-text = "Add Counter (WIP)"
-
 [connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/MoveButton" to="GraphEdit" method="_on_move_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PulsarButton" to="GraphEdit" method="_on_pulsar_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PulsarOnceButton" to="GraphEdit" method="_on_pulsar_once_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PulsarClicButton" to="GraphEdit" method="_on_pulsar_clic_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PrintButton" to="GraphEdit" method="_on_print_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]
 [connection signal="timeout" from="GraphEdit/CheckConditionNode(WIP)/Timer" to="GraphEdit/CheckConditionNode(WIP)" method="_on_timer_timeout"]
-[connection signal="pressed" from="VFlowContainer/MoveButton" to="GraphEdit" method="_on_move_button_pressed"]
-[connection signal="pressed" from="VFlowContainer/PulsarButton" to="GraphEdit" method="_on_pulsar_button_pressed"]
-[connection signal="pressed" from="VFlowContainer/PulsarOnceButton" to="GraphEdit" method="_on_pulsar_once_button_pressed"]
-[connection signal="pressed" from="VFlowContainer/PulsarClicButton" to="GraphEdit" method="_on_pulsar_clic_button_pressed"]
-[connection signal="pressed" from="VFlowContainer/PrintButton" to="GraphEdit" method="_on_print_button_pressed"]
-[connection signal="pressed" from="VFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]

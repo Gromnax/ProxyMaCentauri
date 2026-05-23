@@ -21,9 +21,11 @@ func on_unhandled_signal_received(_args: Dictionary={}) -> void:
 func signal_received(_port: int, _value:String="") -> void:
 	var selected_items : Array = item_list.get_selected_items()
 	var request : int = EventBus.get_unused_id()
+	
 	var request_sent : bool = false
 	if selected_items.size() == 0:
 		return
+
 	match selected_items[0]:
 		0:
 			pass
