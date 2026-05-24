@@ -19,6 +19,8 @@ signal check_is_arrived(id:int, response:bool)
 signal check_obj_response(id:int, response:bool)
 signal check_just_fell_response(id:int, response:bool)
 
+signal level_start()
+
 func get_unused_id() -> int:
 	request_id = request_id+1
 	return request_id-1

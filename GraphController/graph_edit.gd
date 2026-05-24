@@ -14,6 +14,12 @@ var child_number: int = 0
 var zoom_enabled := true
 var locked_zoom := 1.0
 
+var has_started : bool = false:
+	set(new_value):
+		if not has_started and new_value:
+			EventBus.start.emit()
+		has_started = new_value
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -65,6 +71,8 @@ func _on_child_entered_tree(node: Node) -> void:
 
 
 func on_output_emitted(source: Node, port: int, value:String) -> void:
+	if not has_started:
+		has_started = true
 	var retrieved_connections = get_output_connections_from_node(source, port)
 	var child : GraphControlNode
 	for connection in retrieved_connections:
