@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dalqt0qo5f3qe"]
 
 [ext_resource type="Script" uid="uid://bssbhhk3pgrmg" path="res://Levels/robot.gd" id="1_p6os6"]
-[ext_resource type="Texture2D" uid="uid://dd0hhnscilhyb" path="res://Assets/Characters/placeholder_character.png" id="2_bkv1r"]
+[ext_resource type="Texture2D" uid="uid://cwxmqlrsdkjkq" path="res://Assets/Characters/kangabobot_sprite_01.png" id="2_p6os6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q0ila"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bkv1r")
+"texture": ExtResource("2_p6os6")
 }],
 "loop": true,
 "name": &"default",

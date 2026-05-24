@@ -22,4 +22,4 @@ func _on_button_exit_pressed() -> void:
 
 
 func _on_button_start_pressed() -> void:
-	PreloadBus.change_level("test_level")
+	PreloadBus.change_level("level_select")
