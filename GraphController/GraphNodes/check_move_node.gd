@@ -1,5 +1,5 @@
 extends GraphControlNode
-class_name MoveNode
+class_name CheckMoveNode
 
 @export var item_list: ItemList
 
@@ -7,7 +7,7 @@ var request_ids : Array[int] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	EventBus.check_is_arrived.connect(feedback_received)
+	EventBus.check_obj_response.connect(feedback_received)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,31 +28,31 @@ func signal_received(_port: int, _value:String="") -> void:
 
 	match selected_items[0]:
 		0:
-			EventBus.jump_left.emit(request)
+			EventBus.check_obj.emit(request, Vector2i.UP)
 			request_sent = true
-			print("jump gauche")
+			print("check jump gauche")
 		1:
-			EventBus.move_left.emit(request)
+			EventBus.check_obj.emit(request, Vector2i.LEFT)
 			request_sent = true
-			print("gauche")
+			print("check gauche")
 		2:
-			EventBus.move_right.emit(request)
+			EventBus.check_obj.emit(request, Vector2i.RIGHT)
 			request_sent = true
-			print("droite")
+			print("check droite")
 		3:
-			EventBus.jump_right.emit(request)
+			EventBus.check_obj.emit(request, Vector2i.DOWN)
 			request_sent = true
-			print("jump droite")
+			print("check jump droite")
 		_:
 			pass
 	if request_sent:
 		request_ids.push_back(request)
 	
-func feedback_received(feedback_id : int, move_success: bool) -> void:
+func feedback_received(feedback_id : int, move_possible: bool) -> void:
 	if request_ids.find(feedback_id)==-1:
 		return
 	request_ids.erase(feedback_id)
-	if move_success:
-		output.emit(self, 0, "moved")
+	if move_possible:
+		output.emit(self, 0, "can_move")
 	else:
-		output.emit(self, 1, "move_failed")
+		output.emit(self, 1, "cant_move")

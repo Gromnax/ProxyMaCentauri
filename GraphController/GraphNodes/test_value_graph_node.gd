@@ -1,5 +1,5 @@
 extends GraphControlNode
-class_name TestValueNode
+class_name  TestValueGraphNode
 
 var value: int = 0
 
@@ -9,13 +9,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func on_unhandled_signal_received(_args: Dictionary={}) -> void:
 	pass
 
-func signal_received(port: int, test_value:String="") -> void:
+func signal_received(_port: int, test_value:String="") -> void:
 	var test_int = test_value.to_int()
 	match %OptionButton.selected:
 		0: #=

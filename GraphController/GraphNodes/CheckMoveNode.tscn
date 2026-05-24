@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bafqingwbaiws"]
+[gd_scene format=3 uid="uid://c128qp8ycyv3g"]
 
-[ext_resource type="Script" uid="uid://cxn81xa08pwtf" path="res://GraphController/GraphNodes/move_node.gd" id="1_rqu53"]
+[ext_resource type="Script" uid="uid://ctmmwqj0ae3hg" path="res://GraphController/GraphNodes/check_move_node.gd" id="1_xy5c5"]
 
-[node name="MoveNode" type="GraphNode" unique_id=346927104 node_paths=PackedStringArray("item_list")]
-title = "Move "
+[node name="CheckMoveNode" type="GraphNode" unique_id=346927104]
+title = "Check Move "
 slot/0/left_enabled = true
 slot/0/left_type = 0
 slot/0/left_color = Color(1, 1, 1, 1)
@@ -31,8 +31,7 @@ slot/2/right_type = 0
 slot/2/right_color = Color(1, 1, 1, 1)
 slot/2/right_icon = null
 slot/2/draw_stylebox = true
-script = ExtResource("1_rqu53")
-item_list = NodePath("Container/ItemList")
+script = ExtResource("1_xy5c5")
 
 [node name="Container" type="AspectRatioContainer" parent="." unique_id=793594589]
 layout_mode = 2
@@ -44,21 +43,21 @@ allow_reselect = true
 auto_width = true
 auto_height = true
 item_count = 4
-item_0/text = "Jump Left"
-item_1/text = "Move Left"
-item_2/text = "Move Right"
-item_3/text = "Jump Right"
+item_0/text = "Check Top"
+item_1/text = "Check Left"
+item_2/text = "Check Right"
+item_3/text = "Check Bottom"
 
 [node name="Container2" type="AspectRatioContainer" parent="." unique_id=184571717]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Container2" unique_id=932829704]
 layout_mode = 2
-text = "Move completed"
+text = "Move possible"
 
 [node name="Container3" type="AspectRatioContainer" parent="." unique_id=512395729]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Container3" unique_id=1016491370]
 layout_mode = 2
-text = "Move failed"
+text = "Move impossible"

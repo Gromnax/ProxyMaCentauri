@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://daswjb4hxhy3p"]
+
+[ext_resource type="Script" uid="uid://igowgsgyjbt5" path="res://GraphController/GraphNodes/fall_detector.gd" id="1_b8h1r"]
+
+[node name="FallDetector" type="GraphNode" unique_id=1150668093]
+title = "Check if fell"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = true
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+script = ExtResource("1_b8h1r")
+
+[node name="Label" type="Label" parent="." unique_id=1708141095]
+layout_mode = 2
+text = "Trigger check"
+
+[node name="Label2" type="Label" parent="." unique_id=352468019]
+layout_mode = 2
+text = "Just fell"
+
+[node name="Label3" type="Label" parent="." unique_id=1341320344]
+layout_mode = 2
+text = "Did not fall"
