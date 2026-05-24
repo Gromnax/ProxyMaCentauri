@@ -28,19 +28,19 @@ func signal_received(_port: int, _value:String="") -> void:
 
 	match selected_items[0]:
 		0:
-			EventBus.check_obj.emit([Vector2.UP, Vector2.UP+Vector2.LEFT])
+			EventBus.check_obj.emit(request, Vector2.UP)
 			request_sent = true
 			print("check jump gauche")
 		1:
-			EventBus.check_obj.emit([Vector2.LEFT])
+			EventBus.check_obj.emit(request, Vector2.LEFT)
 			request_sent = true
 			print("check gauche")
 		2:
-			EventBus.check_obj.emit([Vector2.RIGHT])
+			EventBus.check_obj.emit(request, Vector2.RIGHT)
 			request_sent = true
 			print("check droite")
 		3:
-			EventBus.check_obj.emit([Vector2.UP, Vector2.UP+Vector2.RIGHT])
+			EventBus.check_obj.emit(request, Vector2.DOWN)
 			request_sent = true
 			print("check jump droite")
 		_:

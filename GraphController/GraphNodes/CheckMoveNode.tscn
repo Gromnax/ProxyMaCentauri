@@ -43,10 +43,10 @@ allow_reselect = true
 auto_width = true
 auto_height = true
 item_count = 4
-item_0/text = "Jump Left"
-item_1/text = "Move Left"
-item_2/text = "Move Right"
-item_3/text = "Jump Right"
+item_0/text = "Check Top"
+item_1/text = "Check Left"
+item_2/text = "Check Right"
+item_3/text = "Check Bottom"
 
 [node name="Container2" type="AspectRatioContainer" parent="." unique_id=184571717]
 layout_mode = 2
