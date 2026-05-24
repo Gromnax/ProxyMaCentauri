@@ -20,6 +20,7 @@ func _ready() -> void:
 	EventBus.move_right.connect(on_move_right)
 	EventBus.jump_left.connect(on_jump_left)
 	EventBus.jump_right.connect(on_jump_right)
+	EventBus.check_obj.connect(on_check_obj)
 	EventBus.check_obj_right.connect(on_check_obj_right)
 	EventBus.check_obj_left.connect(on_check_obj_left)
 	EventBus.check_obj_under.connect(on_check_obj_under)
@@ -148,18 +149,27 @@ func on_jump_left(id:int):
 # CHECKS
 # --------------------------------------------------
 
+func on_check_obj(id:int, offset: Vector2i):
+	var current = world_to_cell(global_position)
+	var side = current + offset
+	await get_tree().process_frame
+	EventBus.check_obj_response.emit(id, is_blocked(side))
+
+## @deprecated
 func on_check_obj_right(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.RIGHT
 	await get_tree().process_frame
 	EventBus.check_obj_right_response.emit(id, is_blocked(side))
 	
+## @deprecated
 func on_check_obj_left(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.LEFT
 	await get_tree().process_frame
 	EventBus.check_obj_left_response.emit(id, is_blocked(side))
 	
+## @deprecated
 func on_check_obj_under(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.DOWN

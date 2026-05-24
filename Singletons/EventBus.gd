@@ -12,7 +12,7 @@ signal move_right(id:int)
 signal move_left(id:int)
 signal jump_right(id:int)
 signal jump_left(id:int)
-signal check_obj(id:int, direction: Vector2)
+signal check_obj(id:int, direction: Vector2i)
 signal check_just_fell(id:int)
 # Triggers emitted by character
 signal check_is_arrived(id:int, response:bool)
