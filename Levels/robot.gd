@@ -1,6 +1,11 @@
 extends Node2D
 
-@onready var wall_layer = $"../WallLayer"
+@onready var boundary_layer : TileMapLayer = $"../BoundaryLayer"
+@onready var obstacle1_layer : TileMapLayer = $"../Obstacle1Layer"
+@onready var obstacle2_layer : TileMapLayer = $"../Obstacle2Layer"
+var collision_layers = [boundary_layer, obstacle1_layer, obstacle2_layer]
+@onready var current_obstacle_layer : TileMapLayer = obstacle1_layer
+
 @onready var level = $".."
 
 const TILE_SIZE := 32
@@ -34,17 +39,30 @@ func _process(delta: float) -> void:
 # --------------------------------------------------
 
 func world_to_cell(pos: Vector2) -> Vector2i:
-	return wall_layer.local_to_map(pos)
+	return boundary_layer.local_to_map(pos)
 
 func cell_to_world(cell: Vector2i) -> Vector2:
-	return wall_layer.map_to_local(cell)
+	return boundary_layer.map_to_local(cell)
 
-func is_blocked(cell: Vector2i) -> bool:
-	var data = wall_layer.get_cell_tile_data(cell)
+func is_blocked_all_layers(cell) -> bool :
+	if is_blocked(boundary_layer, cell):
+		return true
+	elif is_blocked(current_obstacle_layer, cell):
+		if current_obstacle_layer == obstacle1_layer : 
+			current_obstacle_layer = obstacle2_layer
+		if current_obstacle_layer == obstacle2_layer : 
+			current_obstacle_layer = obstacle1_layer
+		if is_blocked(current_obstacle_layer, cell):
+			return true
+	return false
+
+func is_blocked(layer: TileMapLayer, cell: Vector2i) -> bool:
+	var data = layer.get_cell_tile_data(cell)
 	if data:
 		var is_astronaut = false
 		if data.has_custom_data("is_astronaut"):
 			is_astronaut = data.get_custom_data("is_astronaut")
+		print(is_astronaut)
 		if is_astronaut : win()
 	return data != null
 
@@ -59,8 +77,7 @@ func try_move(id : int, dir: Vector2i) -> void:
 	var current_cell = world_to_cell(global_position)
 	var target_cell = current_cell + dir
 
-	# Wall collision
-	if is_blocked(target_cell):
+	if is_blocked_all_layers(target_cell):
 		EventBus.check_is_arrived.emit(id, false)
 		return
 	is_moving = true
@@ -85,7 +102,7 @@ func should_fall() -> bool:
 	var current = world_to_cell(global_position)
 	var below = current + Vector2i.DOWN
 
-	return not is_blocked(below)
+	return not is_blocked_all_layers(below)
 		
 func fall():
 	if is_moving:
@@ -95,7 +112,7 @@ func fall():
 	var target = current
 
 	# Cherche la dernière case libre
-	while not is_blocked(target + Vector2i.DOWN):
+	while not is_blocked_all_layers(target + Vector2i.DOWN):
 		target += Vector2i.DOWN
 
 	# Si aucune chute
@@ -152,19 +169,19 @@ func on_check_obj_right(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.RIGHT
 	await get_tree().process_frame
-	EventBus.check_obj_right_response.emit(id, is_blocked(side))
+	EventBus.check_obj_right_response.emit(id, is_blocked_all_layers(side))
 	
 func on_check_obj_left(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.LEFT
 	await get_tree().process_frame
-	EventBus.check_obj_left_response.emit(id, is_blocked(side))
+	EventBus.check_obj_left_response.emit(id, is_blocked_all_layers(side))
 	
 func on_check_obj_under(id:int):
 	var current = world_to_cell(global_position)
 	var side = current + Vector2i.DOWN
 	await get_tree().process_frame
-	EventBus.check_obj_under_response.emit(id, is_blocked(side))
+	EventBus.check_obj_under_response.emit(id, is_blocked_all_layers(side))
 	
 func on_check_just_fell(id:int):
 	var response = false
@@ -173,4 +190,6 @@ func on_check_just_fell(id:int):
 	EventBus.check_just_fell_response.emit(id, response)
 		
 func win():
+	if level.unlock_level != "" :
+		PreloadBus.resources["progression"][level.unlock_level] = true
 	PreloadBus.change_level("win_menu")

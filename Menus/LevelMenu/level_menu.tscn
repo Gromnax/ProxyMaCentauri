@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://dl5p2e3j5e115"]
+
+[ext_resource type="Script" uid="uid://d3hl6sn4aohxc" path="res://Menus/LevelMenu/level_menu.gd" id="1_li2ch"]
+[ext_resource type="Texture2D" uid="uid://dnp41s027t85g" path="res://Assets/UI/Circles.png" id="2_agrk4"]
+[ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="3_hn0qk"]
+[ext_resource type="Texture2D" uid="uid://drudma8s3a281" path="res://Assets/UI/level_button.png" id="4_t03ih"]
+[ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="5_hn0qk"]
+[ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="6_t03ih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h8s6"]
+bg_color = Color(0.09019608, 0.08627451, 0.101960786, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3asqv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ex724"]
+texture = ExtResource("4_t03ih")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_644hd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0h8s6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ex724"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mwfn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlg87"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42qbw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa01c"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="LevelMenu" type="Control" unique_id=920182486]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_li2ch")
+
+[node name="PanelBg" type="Panel" parent="." unique_id=1232199411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0h8s6")
+
+[node name="TextureRectCircles" type="TextureRect" parent="." unique_id=1196754538]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.5
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_agrk4")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1166268840]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.2
+anchor_right = 0.65
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button00" type="Button" parent="VBoxContainer" unique_id=1402660155]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "00 - Tutorial"
+
+[node name="Button01" type="Button" parent="VBoxContainer" unique_id=1014393689]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "01 - Stairs"
+
+[node name="Button02" type="Button" parent="VBoxContainer" unique_id=654061222]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "02 - "
+
+[node name="Button03" type="Button" parent="VBoxContainer" unique_id=1881347352]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "03 - "
+
+[node name="Button04" type="Button" parent="VBoxContainer" unique_id=1054886893]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "04 -"
+
+[node name="Button05" type="Button" parent="VBoxContainer" unique_id=1339190774]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "05 -"
+
+[node name="Button06" type="Button" parent="VBoxContainer" unique_id=1069702664]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "06 -"
+
+[node name="Button07" type="Button" parent="VBoxContainer" unique_id=1366258741]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "07 -"
+
+[node name="Button08" type="Button" parent="VBoxContainer" unique_id=831808126]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "08 -"
+
+[node name="Button09" type="Button" parent="VBoxContainer" unique_id=1687474456]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hn0qk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3asqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
+text = "09 -"
+
+[node name="ControlSeparator" type="Control" parent="VBoxContainer" unique_id=169315436]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonTitle" type="Button" parent="VBoxContainer" unique_id=1093001604]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0h8s6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ex724")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3mwfn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rlg87")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_42qbw")
+script = ExtResource("5_hn0qk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ButtonTitle" unique_id=520376785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelSeparator" type="Panel" parent="VBoxContainer/ButtonTitle/HBoxContainer" unique_id=392768113]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oa01c")
+
+[node name="LabelTitle" type="RichTextLabel" parent="VBoxContainer/ButtonTitle/HBoxContainer" unique_id=1408063904]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_t03ih")
+theme_override_fonts/bold_font = ExtResource("6_t03ih")
+theme_override_fonts/bold_italics_font = ExtResource("6_t03ih")
+theme_override_fonts/italics_font = ExtResource("6_t03ih")
+theme_override_fonts/mono_font = ExtResource("6_t03ih")
+theme_override_font_sizes/normal_font_size = 48
+text = "Main menu"
+horizontal_alignment = 1
+
+[node name="PanelSeparator2" type="Panel" parent="VBoxContainer/ButtonTitle/HBoxContainer" unique_id=1998917852]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oa01c")
+
+[connection signal="pressed" from="VBoxContainer/Button00" to="." method="_on_button_00_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button01" to="." method="_on_button_01_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button02" to="." method="_on_button_02_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button03" to="." method="_on_button_03_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button04" to="." method="_on_button_04_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button05" to="." method="_on_button_05_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button06" to="." method="_on_button_06_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button07" to="." method="_on_button_07_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button08" to="." method="_on_button_08_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button09" to="." method="_on_button_09_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonTitle" to="." method="_on_button_title_pressed"]
