@@ -1119,9 +1119,6 @@ content_margin_right = 10.0
 content_margin_bottom = 10.0
 draw_center = false
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upgg8"]
-texture = ExtResource("10_pkowf")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqcie"]
 texture = ExtResource("10_pkowf")
 
@@ -1218,18 +1215,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oe5jq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer" unique_id=593263072]
 layout_mode = 2
-
-[node name="ButtonStart" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=1658404559]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_d4khe")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_upgg8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_upgg8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_upgg8")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_upgg8")
-theme_override_styles/focus = SubResource("StyleBoxTexture_upgg8")
-toggle_mode = true
-text = "Upload to robot"
 
 [node name="ButtonRetry" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=2102640099]
 visible = false
@@ -1624,7 +1609,6 @@ position = Vector2(960, 540)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=790893878]
 environment = SubResource("Environment_q0ila")
 
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry" to="." method="_on_button_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer/ButtonMoveRight" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_move_right_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug/HBoxContainer/VBoxContainer2/ButtonMoveLeft" to="CanvasLayer/Control/VBoxContainer/ControlNoCodeDebug" method="_on_button_move_left_pressed"]

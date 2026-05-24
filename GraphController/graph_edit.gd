@@ -17,7 +17,7 @@ var locked_zoom := 1.0
 var has_started : bool = false:
 	set(new_value):
 		if not has_started and new_value:
-			EventBus.start.emit()
+			EventBus.level_start.emit()
 		has_started = new_value
 
 # Called when the node enters the scene tree for the first time.

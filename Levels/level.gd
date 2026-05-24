@@ -13,37 +13,34 @@ var current_phase : PHASE = PHASE.PLANNING
 signal phase_changed(phase:PHASE)
 
 func _ready() -> void:
+	EventBus.level_start.connect(start)
 	PreloadBus.references["bgm_player"].set_stream(PreloadBus.bgm["main_loop"])
 	PreloadBus.references["bgm_player"].play()
 	update_ui_retry()
 	$CanvasLayer/Control.phase_ui("Programming robot")
-
-
-func _on_button_start_pressed() -> void:
-	current_phase = PHASE.RUNNING
-	phase_changed.emit(current_phase)
-	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.disabled = false
-	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.disabled = true
-	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.show()
-	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.hide()
-	$Robot/Camera2D.enabled = true
-	$Camera2DOverview.enabled = false
-	$CanvasLayer/Control/VBoxContainer.hide()
-	$CanvasLayer/Control.phase_ui("Deploying robot")
+	
 
 func _on_button_retry_pressed() -> void:
 	current_phase = PHASE.PLANNING
 	current_try -= 1
 	phase_changed.emit(current_phase)
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.disabled = true
-	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.disabled = false
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.hide()
-	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonStart.show()
 	$Robot/Camera2D.enabled = false
 	$Camera2DOverview.enabled = true
 	$CanvasLayer/Control/VBoxContainer.show()
 	$Robot.global_position = start_position
 	$CanvasLayer/Control.phase_ui("Programming robot")
-	
+
+func start() -> void:
+	current_phase = PHASE.RUNNING
+	phase_changed.emit(current_phase)
+	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.disabled = false
+	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.show()
+	$Robot/Camera2D.enabled = true
+	$Camera2DOverview.enabled = false
+	$CanvasLayer/Control/VBoxContainer.hide()
+	$CanvasLayer/Control.phase_ui("Deploying robot")
+
 func update_ui_retry():
 	$CanvasLayer/Control/PanelContainer/VBoxContainer/ButtonRetry.text = "Retry (%s left)" % str(current_try - 1)

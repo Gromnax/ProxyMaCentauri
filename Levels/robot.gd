@@ -26,9 +26,6 @@ func _ready() -> void:
 	EventBus.jump_left.connect(on_jump_left)
 	EventBus.jump_right.connect(on_jump_right)
 	EventBus.check_obj.connect(on_check_obj)
-	EventBus.check_obj_right.connect(on_check_obj_right)
-	EventBus.check_obj_left.connect(on_check_obj_left)
-	EventBus.check_obj_under.connect(on_check_obj_under)
 	EventBus.check_just_fell.connect(on_check_just_fell)
 	
 func _process(delta: float) -> void:
@@ -170,7 +167,7 @@ func on_check_obj(id:int, offset: Vector2i):
 	var current = world_to_cell(global_position)
 	var side = current + offset
 	await get_tree().process_frame
-	EventBus.check_obj_response.emit(id, is_blocked(side))
+	EventBus.check_obj_response.emit(id, is_blocked_all_layers(side))
 
 ## @deprecated
 func on_check_obj_right(id:int):
