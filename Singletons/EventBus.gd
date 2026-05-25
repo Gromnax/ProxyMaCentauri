@@ -36,7 +36,13 @@ func _init() -> void:
 	check_is_arrived.connect(log_signal.bind("check_is_arrived"))
 	check_obj_response.connect(log_signal.bind("check_obj_right_response"))
 	check_just_fell_response.connect(log_signal.bind("check_just_fell_response"))
-	
+
+func log_signal_check_obj(id: int, direction: Vector2i = Vector2i.ZERO, signal_name: String="") -> void:
+	var to_print : String = ""
+	to_print += "Signal called ("+str(id)+") : "
+	to_print += signal_name
+	print(to_print)
+
 func log_signal(id: int, _response: bool = false, signal_name: String="") -> void:
 	var to_print : String = ""
 	to_print += "Signal called ("+str(id)+") : "
