@@ -21,6 +21,7 @@ signal fall_finished
 
 var current_movement := MOVEMENT.GROUNDED
 var is_moving := false
+var ignore_fall := false
 
 func _ready() -> void:
 	EventBus.move_left.connect(on_move_left)
@@ -31,7 +32,7 @@ func _ready() -> void:
 	EventBus.check_just_fell.connect(on_check_just_fell)
 	
 func _process(delta: float) -> void:
-	if not is_moving and should_fall():
+	if not is_moving and should_fall() and not ignore_fall:
 		fall()
 
 # --------------------------------------------------
@@ -44,17 +45,10 @@ func world_to_cell(pos: Vector2) -> Vector2i:
 func cell_to_world(cell: Vector2i) -> Vector2:
 	return boundary_layer.map_to_local(cell)
 
-func is_blocked_all_layers(cell) -> bool :
-	if is_blocked(boundary_layer, cell):
-		return true
-	elif is_blocked(current_obstacle_layer, cell):
-		if current_obstacle_layer == obstacle1_layer : 
-			current_obstacle_layer = obstacle2_layer
-		if current_obstacle_layer == obstacle2_layer : 
-			current_obstacle_layer = obstacle1_layer
-		if is_blocked(current_obstacle_layer, cell):
-			return true
-	return false
+func is_blocked_all_layers(cell: Vector2i) -> bool:
+	return is_blocked(boundary_layer, cell) \
+		or is_blocked(obstacle1_layer, cell) \
+		or is_blocked(obstacle2_layer, cell)
 
 func is_blocked(layer: TileMapLayer, cell: Vector2i) -> bool:
 	var data = layer.get_cell_tile_data(cell)
@@ -130,7 +124,6 @@ func try_move(id : int, dir: Vector2i) -> void:
 	EventBus.check_is_arrived.emit(id, true)
 
 func should_fall() -> bool:
-
 	var current = world_to_cell(global_position)
 	var below = current + Vector2i.DOWN
 
