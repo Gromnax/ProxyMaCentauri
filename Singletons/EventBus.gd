@@ -31,7 +31,7 @@ func _init() -> void:
 	move_left.connect(log_signal.bind(false, "move_left"))
 	jump_right.connect(log_signal.bind(false, "jump_right"))
 	jump_left.connect(log_signal.bind(false, "jump_left"))
-	check_obj.connect(log_signal.bind(false, "check_obj_right"))
+	check_obj.connect(log_signal_check_obj.bind("check_obj_right"))
 	check_just_fell.connect(log_signal.bind(false, "check_just_fell"))
 	check_is_arrived.connect(log_signal.bind("check_is_arrived"))
 	check_obj_response.connect(log_signal.bind("check_obj_right_response"))
