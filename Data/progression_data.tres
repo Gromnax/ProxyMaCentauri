@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ProgressionData" format=3]
+[gd_resource type="Resource" script_class="ProgressionData" format=3 uid="uid://ds5ylca46s6r2"]
 
 [ext_resource type="Script" path="res://Data/Struct/progression_struct.gd" id="1_swtba"]
 
