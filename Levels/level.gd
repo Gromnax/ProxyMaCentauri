@@ -30,6 +30,7 @@ func _on_button_retry_pressed() -> void:
 	$Camera2DOverview.enabled = true
 	$CanvasLayer/Control/VBoxContainer.show()
 	$Robot.global_position = start_position
+	EventBus.level_retry.emit()
 	$CanvasLayer/Control.phase_ui("Programming robot")
 
 func start() -> void:
