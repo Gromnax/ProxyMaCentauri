@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dfncvt36vs88i"]
 
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_0gx2h"]
 [ext_resource type="Script" uid="uid://cxvfx4mmd2b4f" path="res://GraphController/GraphNodes/counter_node.gd" id="1_j1db3"]
 
 [node name="CounterNode" type="GraphNode" unique_id=1105712228 node_paths=PackedStringArray("value_label", "slota_option", "slota_number", "slotb_option", "slotb_number")]
 offset_right = 172.0
 offset_bottom = 111.0
+theme = ExtResource("1_0gx2h")
 title = "CounterNode"
 slot/0/left_enabled = false
 slot/0/left_type = 0

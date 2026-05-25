@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2xked7pqiy7r"]
 
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_vnras"]
 [ext_resource type="PackedScene" uid="uid://4o1323va1pb" path="res://GraphController/GraphNodes/PulsarNode.tscn" id="2_rndvx"]
 [ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="3_m0dpa"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vnras")
 
 [node name="GraphEdit" type="GraphEdit" parent="." unique_id=1604591377]
 layout_mode = 2
@@ -80,7 +82,7 @@ layout_mode = 0
 offset_left = 273.0
 offset_top = 325.0
 offset_right = 436.0
-offset_bottom = 405.0
+offset_bottom = 429.0
 mouse_filter = 1
 position_offset = Vector2(273, 325)
 
@@ -89,7 +91,7 @@ visible = false
 layout_mode = 0
 offset_left = 1090.0
 offset_top = 160.0
-offset_right = 1260.0
+offset_right = 1275.0
 offset_bottom = 265.0
 mouse_filter = 1
 position_offset = Vector2(1090, 160)
