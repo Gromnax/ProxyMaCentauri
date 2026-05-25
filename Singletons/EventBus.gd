@@ -31,12 +31,18 @@ func _init() -> void:
 	move_left.connect(log_signal.bind(false, "move_left"))
 	jump_right.connect(log_signal.bind(false, "jump_right"))
 	jump_left.connect(log_signal.bind(false, "jump_left"))
-	check_obj.connect(log_signal.bind(false, "check_obj_right"))
+	check_obj.connect(log_signal_check_obj.bind("check_obj_right"))
 	check_just_fell.connect(log_signal.bind(false, "check_just_fell"))
 	check_is_arrived.connect(log_signal.bind("check_is_arrived"))
 	check_obj_response.connect(log_signal.bind("check_obj_right_response"))
 	check_just_fell_response.connect(log_signal.bind("check_just_fell_response"))
-	
+
+func log_signal_check_obj(id: int, direction: Vector2i = Vector2i.ZERO, signal_name: String="") -> void:
+	var to_print : String = ""
+	to_print += "Signal called ("+str(id)+") : "
+	to_print += signal_name
+	print(to_print)
+
 func log_signal(id: int, _response: bool = false, signal_name: String="") -> void:
 	var to_print : String = ""
 	to_print += "Signal called ("+str(id)+") : "

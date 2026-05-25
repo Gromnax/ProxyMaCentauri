@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2xked7pqiy7r"]
 
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
+[ext_resource type="Script" uid="uid://7tqcl4e0oumq" path="res://GraphController/control_graph.gd" id="1_tidi0"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=952697314]
 anchors_preset = 15
@@ -8,8 +9,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tidi0")
 
 [node name="GraphEdit" type="GraphEdit" parent="." unique_id=1604591377]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 right_disconnects = true
@@ -61,13 +64,9 @@ layout_mode = 2
 text = "Add Pulsar Clic"
 
 [node name="PrintButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=376034712]
-layout_mode = 2
-text = "Add Printer"
-
-[node name="CounterButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=2052313127]
 visible = false
 layout_mode = 2
-text = "Add Counter (WIP)"
+text = "Add Printer"
 
 [node name="CheckButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=2101095282]
 layout_mode = 2
@@ -77,6 +76,14 @@ text = "Add Object Sensor"
 layout_mode = 2
 text = "Add Falling Sensor"
 
+[node name="CounterButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1067297234]
+layout_mode = 2
+text = "Add Counter"
+
+[node name="IfButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=481245357]
+layout_mode = 2
+text = "Add If Node"
+
 [connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
@@ -85,6 +92,7 @@ text = "Add Falling Sensor"
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PulsarOnceButton" to="GraphEdit" method="_on_pulsar_once_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PulsarClicButton" to="GraphEdit" method="_on_pulsar_clic_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PrintButton" to="GraphEdit" method="_on_print_button_pressed"]
-[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CheckButton" to="GraphEdit" method="_on_check_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/FellButton" to="GraphEdit" method="_on_fell_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/IfButton" to="GraphEdit" method="_on_if_button_pressed"]

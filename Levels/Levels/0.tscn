@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dc2dcv0kcyi6h" path="res://Assets/Tiles/pillar-Sheet.png" id="6_lxpej"]
 [ext_resource type="PackedScene" uid="uid://dalqt0qo5f3qe" path="res://Levels/robot.tscn" id="7_ihgal"]
 [ext_resource type="Script" uid="uid://cj1r4rswqvrvr" path="res://Levels/Levels/tutorial0.gd" id="8_snjbe"]
-[ext_resource type="Script" uid="uid://bujiir7nvnfx" path="res://Levels/control.gd" id="8_u6tb5"]
+[ext_resource type="Script" path="res://Levels/control.gd" id="8_u6tb5"]
 [ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="9_d4khe"]
 [ext_resource type="Texture2D" uid="uid://251lpi6tgpxj" path="res://Assets/UI/phase.png" id="10_pkowf"]
 [ext_resource type="PackedScene" uid="uid://d2xked7pqiy7r" path="res://GraphController/control_graph.tscn" id="11_eu88u"]
 [ext_resource type="Script" uid="uid://6teyb5tdjs8" path="res://Levels/control_no_code.gd" id="12_ev5wd"]
-[ext_resource type="Script" uid="uid://b03ii54bg28l6" path="res://Levels/pause.gd" id="13_odd0k"]
+[ext_resource type="Script" path="res://Levels/pause.gd" id="13_odd0k"]
 [ext_resource type="Texture2D" uid="uid://da5jt5fn8keeh" path="res://Assets/UI/Circles_full.png" id="14_byqtx"]
 [ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="15_fiy1m"]
 [ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="16_d0gul"]
@@ -1274,6 +1274,7 @@ grow_vertical = 0
 [node name="ControlGraph" parent="CanvasLayer/Control/VBoxContainer" unique_id=633943305 instance=ExtResource("11_eu88u")]
 custom_minimum_size = Vector2(1800, 300)
 layout_mode = 2
+info = "Add a pulse node to the graph, then connect it to a move node. Link the \"Move completed\" output back to the same place you connected your pulse. Then, click on pulse to launch the rescue opration."
 
 [node name="ControlNoCodeDebug" type="Control" parent="CanvasLayer/Control/VBoxContainer" unique_id=1905153014]
 visible = false

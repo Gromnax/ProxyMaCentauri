@@ -43,6 +43,14 @@ func signal_received(_port: int, _value:String="") -> void:
 			EventBus.check_obj.emit(request, Vector2i.DOWN)
 			request_sent = true
 			print("check jump droite")
+		4:
+			EventBus.check_obj.emit(request, Vector2i.DOWN+Vector2i.LEFT)
+			request_sent = true
+			print("check jump droite")
+		5:
+			EventBus.check_obj.emit(request, Vector2i.DOWN+Vector2i.RIGHT)
+			request_sent = true
+			print("check jump droite")
 		_:
 			pass
 	if request_sent:

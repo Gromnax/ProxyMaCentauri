@@ -8,6 +8,8 @@ var print_scene = preload("res://GraphController/GraphNodes/Printer.tscn")
 var pulsar_clic_scene = preload("res://GraphController/GraphNodes/PulsarNodeClic.tscn")
 var check_move_scene = preload("res://GraphController/GraphNodes/CheckMoveNode.tscn")
 var check_fell_scene = preload("res://GraphController/GraphNodes/FallDetector.tscn")
+var counter_scene = preload("res://GraphController/GraphNodes/CounterNode.tscn")
+var if_scene = preload("res://GraphController/GraphNodes/TestValueGraphNode.tscn")
 
 var child_number: int = 0
 
@@ -136,7 +138,12 @@ func _on_print_button_pressed() -> void:
 
 
 func _on_counter_button_pressed() -> void:
-	print("Pas encore prêt")
+	var new_node : CounterNode = counter_scene.instantiate()
+	new_node.set_name("GraphControlNode"+str(child_number))
+	child_number = child_number +1
+	add_child(new_node)
+	close_popup()
+	set_graph_node_to_mouse(new_node)
 
 
 func _on_pulsar_once_button_pressed() -> void:
@@ -176,9 +183,9 @@ func delete_selected_nodes() -> void:
 
 	# Delete connections first
 	for node in nodes_to_delete:
-		var connections = get_connection_list()
+		var connections_of = get_connection_list()
 
-		for connection in connections:
+		for connection in connections_of:
 			if connection.from_node == node.name \
 			or connection.to_node == node.name:
 
@@ -204,6 +211,15 @@ func _on_check_button_pressed() -> void:
 
 func _on_fell_button_pressed() -> void:
 	var new_node : FallDetector = check_fell_scene.instantiate()
+	new_node.set_name("GraphControlNode"+str(child_number))
+	child_number = child_number +1
+	add_child(new_node)
+	close_popup()
+	set_graph_node_to_mouse(new_node)
+
+
+func _on_if_button_pressed() -> void:
+	var new_node : TestValueGraphNode = if_scene.instantiate()
 	new_node.set_name("GraphControlNode"+str(child_number))
 	child_number = child_number +1
 	add_child(new_node)

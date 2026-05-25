@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cuflfy2oprml"]
+
+[ext_resource type="Script" uid="uid://bshxaiedgvckj" path="res://GraphController/GraphNodes/graph_info_node.gd" id="1_sgqim"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_csis1"]
+font_size = 13
+
+[node name="GraphInfoNode" type="GraphNode" unique_id=1047872699]
+title = "Information"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_sgqim")
+
+[node name="Label" type="Label" parent="." unique_id=270422034]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Some Text Here To Give Informations To The Player"
+label_settings = SubResource("LabelSettings_csis1")
+horizontal_alignment = 1
+autowrap_mode = 2
