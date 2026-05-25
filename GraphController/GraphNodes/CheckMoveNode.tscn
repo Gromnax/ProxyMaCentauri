@@ -44,11 +44,13 @@ layout_mode = 2
 allow_reselect = true
 auto_width = true
 auto_height = true
-item_count = 4
+item_count = 6
 item_0/text = "Check Top"
 item_1/text = "Check Left"
 item_2/text = "Check Right"
 item_3/text = "Check Bottom"
+item_4/text = "Check Bottom Left"
+item_5/text = "Check Bottom Right"
 
 [node name="Container2" type="AspectRatioContainer" parent="." unique_id=184571717]
 layout_mode = 2

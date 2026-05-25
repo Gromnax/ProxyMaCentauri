@@ -47,8 +47,8 @@ auto_width = true
 auto_height = true
 item_count = 4
 item_0/text = "Jump Left"
-item_1/text = "Move Left"
-item_2/text = "Move Right"
+item_1/text = "Dash Left"
+item_2/text = "Dash Right"
 item_3/text = "Jump Right"
 
 [node name="Container2" type="AspectRatioContainer" parent="." unique_id=184571717]

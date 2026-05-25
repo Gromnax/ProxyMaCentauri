@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2xked7pqiy7r"]
 
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
+[ext_resource type="Script" uid="uid://7tqcl4e0oumq" path="res://GraphController/control_graph.gd" id="1_tidi0"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=952697314]
 anchors_preset = 15
@@ -8,8 +9,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tidi0")
 
 [node name="GraphEdit" type="GraphEdit" parent="." unique_id=1604591377]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 right_disconnects = true
