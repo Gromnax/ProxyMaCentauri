@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_resource type="Resource" script_class="ProgressionData" format=3 uid="uid://ctwejbwprha8r"]
+=======
+[gd_resource type="Resource" script_class="ProgressionData" format=3 uid="uid://ds5ylca46s6r2"]
+>>>>>>> main
 
 [ext_resource type="Script" uid="uid://cw4qd2187afxb" path="res://Data/Struct/progression_struct.gd" id="1_swtba"]
 

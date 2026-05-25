@@ -25,8 +25,10 @@ var has_started : bool = false:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	EventBus.level_retry.connect(retry)
 
+func retry() -> void:
+	has_started = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
