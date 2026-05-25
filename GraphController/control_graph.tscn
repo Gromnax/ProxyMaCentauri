@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://d2xked7pqiy7r"]
 
 [ext_resource type="Script" uid="uid://dj256iqws2s4m" path="res://GraphController/graph_edit.gd" id="1_h076a"]
-[ext_resource type="PackedScene" uid="uid://4o1323va1pb" path="res://GraphController/GraphNodes/PulsarNode.tscn" id="2_rndvx"]
-[ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="3_m0dpa"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=952697314]
 anchors_preset = 15
@@ -75,64 +73,6 @@ text = "Check"
 [node name="FellButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1993092049]
 layout_mode = 2
 
-[node name="PulsarNode" parent="GraphEdit" unique_id=2041580164 instance=ExtResource("2_rndvx")]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 325.0
-offset_right = 436.0
-offset_bottom = 405.0
-mouse_filter = 1
-position_offset = Vector2(273, 325)
-
-[node name="CheckConditionNode(WIP)" type="GraphNode" parent="GraphEdit" unique_id=466680463 node_paths=PackedStringArray("timer")]
-visible = false
-layout_mode = 0
-offset_left = 1090.0
-offset_top = 160.0
-offset_right = 1260.0
-offset_bottom = 265.0
-mouse_filter = 1
-position_offset = Vector2(1090, 160)
-title = "Check Condition"
-slot/0/left_enabled = true
-slot/0/left_type = 0
-slot/0/left_color = Color(1, 1, 1, 1)
-slot/0/left_icon = null
-slot/0/right_enabled = true
-slot/0/right_type = 0
-slot/0/right_color = Color(1, 1, 1, 1)
-slot/0/right_icon = null
-slot/0/draw_stylebox = true
-slot/1/left_enabled = false
-slot/1/left_type = 0
-slot/1/left_color = Color(1, 1, 1, 1)
-slot/1/left_icon = null
-slot/1/right_enabled = true
-slot/1/right_type = 0
-slot/1/right_color = Color(1, 1, 1, 1)
-slot/1/right_icon = null
-slot/1/draw_stylebox = true
-script = ExtResource("3_m0dpa")
-timer = NodePath("Timer")
-metadata/_custom_type_script = "uid://dmg65t0orfe1c"
-
-[node name="Timer" type="Timer" parent="GraphEdit/CheckConditionNode(WIP)" unique_id=441151500]
-autostart = true
-
-[node name="Container" type="AspectRatioContainer" parent="GraphEdit/CheckConditionNode(WIP)" unique_id=293459404]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="GraphEdit/CheckConditionNode(WIP)/Container" unique_id=1727136123]
-layout_mode = 2
-text = "True"
-
-[node name="Container2" type="AspectRatioContainer" parent="GraphEdit/CheckConditionNode(WIP)" unique_id=1962593887]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="GraphEdit/CheckConditionNode(WIP)/Container2" unique_id=897145678]
-layout_mode = 2
-text = "False"
-
 [connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
@@ -144,4 +84,3 @@ text = "False"
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CheckButton" to="GraphEdit" method="_on_check_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/FellButton" to="GraphEdit" method="_on_fell_button_pressed"]
-[connection signal="timeout" from="GraphEdit/CheckConditionNode(WIP)/Timer" to="GraphEdit/CheckConditionNode(WIP)" method="_on_timer_timeout"]
