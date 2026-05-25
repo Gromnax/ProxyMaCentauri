@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bafqingwbaiws"]
 
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_pwbo1"]
 [ext_resource type="Script" uid="uid://cxn81xa08pwtf" path="res://GraphController/GraphNodes/move_node.gd" id="1_rqu53"]
 
 [node name="MoveNode" type="GraphNode" unique_id=346927104 node_paths=PackedStringArray("item_list")]
+theme = ExtResource("1_pwbo1")
 title = "Move "
 slot/0/left_enabled = true
 slot/0/left_type = 0

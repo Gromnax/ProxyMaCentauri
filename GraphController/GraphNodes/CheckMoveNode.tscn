@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c128qp8ycyv3g"]
 
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_pbbfh"]
 [ext_resource type="Script" uid="uid://ctmmwqj0ae3hg" path="res://GraphController/GraphNodes/check_move_node.gd" id="1_xy5c5"]
 
 [node name="CheckMoveNode" type="GraphNode" unique_id=346927104]
+theme = ExtResource("1_pbbfh")
 title = "Check Move "
 slot/0/left_enabled = true
 slot/0/left_type = 0

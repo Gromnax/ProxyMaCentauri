@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="OptionsData" format=3 uid="uid://dj55jf17lqjwp"]
+[gd_resource type="Resource" script_class="OptionsData" format=3]
 
-[ext_resource type="Script" uid="uid://ba0pmci5278vd" path="res://Data/Struct/option_struct.gd" id="1_pgoju"]
+[ext_resource type="Script" path="res://Data/Struct/option_struct.gd" id="1_pgoju"]
 
 [resource]
 script = ExtResource("1_pgoju")
-bgm_volume = 0.2
+bgm_volume = 0.6
 sfx_volume = 0.1
 full_screen = true
 cinematic = false

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bwkncfrmf8081"]
 
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_4fn8u"]
 [ext_resource type="Script" uid="uid://bpniqec73e2bl" path="res://GraphController/GraphNodes/test_value_graph_node.gd" id="1_f58cq"]
 
 [node name="TestValueGraphNode" type="GraphNode" unique_id=580186071]
 offset_right = 168.0
 offset_bottom = 161.0
+theme = ExtResource("1_4fn8u")
 title = "Test Value"
 slot/0/left_enabled = false
 slot/0/left_type = 0

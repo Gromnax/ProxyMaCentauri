@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://daswjb4hxhy3p"]
 
 [ext_resource type="Script" uid="uid://igowgsgyjbt5" path="res://GraphController/GraphNodes/fall_detector.gd" id="1_b8h1r"]
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_t6jjr"]
 
 [node name="FallDetector" type="GraphNode" unique_id=1150668093]
+theme = ExtResource("1_t6jjr")
 title = "Check if fell"
 slot/0/left_enabled = true
 slot/0/left_type = 0

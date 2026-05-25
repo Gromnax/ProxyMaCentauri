@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://4o1323va1pb"]
 
 [ext_resource type="Script" uid="uid://dmg65t0orfe1c" path="res://GraphController/GraphNodes/pulsar_node.gd" id="1_32qu6"]
+[ext_resource type="Theme" uid="uid://dqgamccj6sar3" path="res://theme.tres" id="1_lciif"]
 
 [node name="PulsarNode" type="GraphNode" unique_id=2041580164 node_paths=PackedStringArray("timer")]
 offset_right = 9.0
 offset_bottom = 55.0
+theme = ExtResource("1_lciif")
 title = "Pulsar"
 slot/0/left_enabled = false
 slot/0/left_type = 0
