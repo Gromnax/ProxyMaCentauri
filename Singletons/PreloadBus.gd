@@ -24,7 +24,7 @@ var scenes = {
 var resources = {
 	"options" = preload("res://Data/options_data.tres"),
 	"robot" = preload("res://Data/robot_data.tres"),
-	"progression" = preload("res://Data/progression_data.tres")
+	"progression" =  preload("res://Data/progression_data.tres")
 }
 
 var bgm = {
