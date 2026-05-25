@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="OptionsData" format=3 uid="uid://b6bgk5ul4x8ep"]
+[gd_resource type="Resource" script_class="OptionsData" format=3]
 
-[ext_resource type="Script" uid="uid://ba0pmci5278vd" path="res://Data/Struct/option_struct.gd" id="1_pgoju"]
+[ext_resource type="Script" path="res://Data/Struct/option_struct.gd" id="1_pgoju"]
 
 [resource]
 script = ExtResource("1_pgoju")

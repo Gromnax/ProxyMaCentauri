@@ -6,6 +6,8 @@ var pulsar_scene = preload("res://GraphController/GraphNodes/PulsarNode.tscn")
 var pulsar_once_scene = preload("res://GraphController/GraphNodes/PulsarNodeOnce.tscn")
 var print_scene = preload("res://GraphController/GraphNodes/Printer.tscn")
 var pulsar_clic_scene = preload("res://GraphController/GraphNodes/PulsarNodeClic.tscn")
+var check_move_scene = preload("res://GraphController/GraphNodes/CheckMoveNode.tscn")
+var check_fell_scene = preload("res://GraphController/GraphNodes/FallDetector.tscn")
 
 var child_number: int = 0
 
@@ -178,3 +180,21 @@ func delete_selected_nodes() -> void:
 
 	for node in nodes_to_delete:
 		node.queue_free()
+
+
+func _on_check_button_pressed() -> void:
+	var new_node : CheckMoveNode = check_move_scene.instantiate()
+	new_node.set_name("GraphControlNode"+str(child_number))
+	child_number = child_number +1
+	add_child(new_node)
+	close_popup()
+	set_graph_node_to_mouse(new_node)
+
+
+func _on_fell_button_pressed() -> void:
+	var new_node : FallDetector = check_fell_scene.instantiate()
+	new_node.set_name("GraphControlNode"+str(child_number))
+	child_number = child_number +1
+	add_child(new_node)
+	close_popup()
+	set_graph_node_to_mouse(new_node)
