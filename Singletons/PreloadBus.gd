@@ -36,7 +36,12 @@ var bgm = {
 
 var sfx = {
 	"hover" = preload("res://Assets/Sfx/hover.ogg"),
-	"click" = preload("res://Assets/Sfx/click.ogg"),
+	"click" = preload("res://Assets/Sfx/Button Clicked.wav"),
+	"step1" = preload("res://Assets/Sfx/Step 1.wav"),
+	"step2" = preload("res://Assets/Sfx/Step 2.wav"),
+	"fall" = preload("res://Assets/Sfx/Fall.wav"),
+	"saved" = preload("res://Assets/Sfx/Astronaut Saved.wav"),
+	"jump" = preload("res://Assets/Sfx/Jump Up.wav")
 }
 ## All references are here. They can be accessed by root
 ## Might need to change place in a later date
