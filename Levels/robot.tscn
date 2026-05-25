@@ -1,17 +1,75 @@
 [gd_scene format=3 uid="uid://dalqt0qo5f3qe"]
 
 [ext_resource type="Script" uid="uid://bssbhhk3pgrmg" path="res://Levels/robot.gd" id="1_p6os6"]
-[ext_resource type="Texture2D" uid="uid://cwxmqlrsdkjkq" path="res://Assets/Characters/kangabobot_sprite_01.png" id="2_p6os6"]
+[ext_resource type="Texture2D" uid="uid://dmrebocnfy1w5" path="res://Assets/Characters/kangabobot_sprite_01-Sheet.png" id="2_p6os6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkv1r"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6ubu"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nqu8"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrhjv"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t84cr"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0lxk"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3csy"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tqmn"]
+atlas = ExtResource("2_p6os6")
+region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q0ila"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_p6os6")
+"texture": SubResource("AtlasTexture_bkv1r")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6ubu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nqu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrhjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t84cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0lxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3csy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tqmn")
+}],
+"loop": false,
+"name": &"run",
+"speed": 15.0
 }]
 
 [node name="Robot" type="Node2D" unique_id=160015996]
@@ -20,6 +78,9 @@ script = ExtResource("1_p6os6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1261820221]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_q0ila")
+animation = &"run"
+frame = 6
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=474545893]
 position = Vector2(0, -32)

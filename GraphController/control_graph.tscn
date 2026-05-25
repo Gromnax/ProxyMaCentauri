@@ -68,6 +68,13 @@ text = "Add Printer"
 layout_mode = 2
 text = "Add Counter (WIP)"
 
+[node name="CheckButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=2101095282]
+layout_mode = 2
+text = "Check"
+
+[node name="FellButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1993092049]
+layout_mode = 2
+
 [node name="PulsarNode" parent="GraphEdit" unique_id=2041580164 instance=ExtResource("2_rndvx")]
 layout_mode = 0
 offset_left = 273.0
@@ -135,4 +142,6 @@ text = "False"
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PulsarClicButton" to="GraphEdit" method="_on_pulsar_clic_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/PrintButton" to="GraphEdit" method="_on_print_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CheckButton" to="GraphEdit" method="_on_check_button_pressed"]
+[connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/FellButton" to="GraphEdit" method="_on_fell_button_pressed"]
 [connection signal="timeout" from="GraphEdit/CheckConditionNode(WIP)/Timer" to="GraphEdit/CheckConditionNode(WIP)" method="_on_timer_timeout"]

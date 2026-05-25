@@ -9,7 +9,7 @@ var collision_layers = [boundary_layer, obstacle1_layer, obstacle2_layer]
 @onready var level = $".."
 
 const TILE_SIZE := 32
-const MOVE_TIME := 0.15
+const MOVE_TIME := 0.3
 const JUMP_HEIGHT := 64
 
 enum MOVEMENT {
@@ -60,7 +60,6 @@ func is_blocked(layer: TileMapLayer, cell: Vector2i) -> bool:
 		var is_astronaut = false
 		if data.has_custom_data("is_astronaut"):
 			is_astronaut = data.get_custom_data("is_astronaut")
-		print(is_astronaut)
 		if is_astronaut : win()
 	return data != null
 
@@ -144,20 +143,32 @@ func fall():
 # --------------------------------------------------
 
 func on_move_right(id:int):
+	$AnimatedSprite2D.scale.x = 1
+	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i.RIGHT)
 	current_movement = MOVEMENT.GROUNDED
+	
 
 func on_move_left(id:int):
+	$AnimatedSprite2D.scale.x = -1
+	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i.LEFT)
 	current_movement = MOVEMENT.GROUNDED
 	
+	
 func on_jump_right(id:int):
+	$AnimatedSprite2D.scale.x = 1
+	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i(1, -1))
 	current_movement = MOVEMENT.GROUNDED
+	
 
 func on_jump_left(id:int):
+	$AnimatedSprite2D.scale.x = -1
+	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i(-1, -1))
 	current_movement = MOVEMENT.GROUNDED
+	
 	
 # --------------------------------------------------
 # CHECKS
