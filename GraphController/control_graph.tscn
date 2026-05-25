@@ -146,4 +146,3 @@ text = "False"
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CounterButton" to="GraphEdit" method="_on_counter_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/CheckButton" to="GraphEdit" method="_on_check_button_pressed"]
 [connection signal="pressed" from="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer/FellButton" to="GraphEdit" method="_on_fell_button_pressed"]
-[connection signal="timeout" from="GraphEdit/CheckConditionNode(WIP)/Timer" to="GraphEdit/CheckConditionNode(WIP)" method="_on_timer_timeout"]
