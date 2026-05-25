@@ -47,10 +47,12 @@ layout_mode = 2
 text = "Add Move"
 
 [node name="PulsarButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1274332163]
+visible = false
 layout_mode = 2
 text = "Add Pulsar"
 
 [node name="PulsarOnceButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=903288526]
+visible = false
 layout_mode = 2
 text = "Add Pulsar Once"
 
@@ -63,15 +65,17 @@ layout_mode = 2
 text = "Add Printer"
 
 [node name="CounterButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=2052313127]
+visible = false
 layout_mode = 2
 text = "Add Counter (WIP)"
 
 [node name="CheckButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=2101095282]
 layout_mode = 2
-text = "Check"
+text = "Add Object Sensor"
 
 [node name="FellButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=1993092049]
 layout_mode = 2
+text = "Add Falling Sensor"
 
 [connection signal="child_entered_tree" from="GraphEdit" to="GraphEdit" method="_on_child_entered_tree"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]

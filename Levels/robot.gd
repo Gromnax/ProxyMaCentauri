@@ -17,6 +17,8 @@ enum MOVEMENT {
 	GROUNDED
 }
 
+signal fall_finished
+
 var current_movement := MOVEMENT.GROUNDED
 var is_moving := false
 
@@ -29,8 +31,8 @@ func _ready() -> void:
 	EventBus.check_just_fell.connect(on_check_just_fell)
 	
 func _process(delta: float) -> void:
-	fall()
-
+	if not is_moving and should_fall():
+		fall()
 
 # --------------------------------------------------
 # GRID HELPERS
@@ -72,13 +74,41 @@ func try_move(id : int, dir: Vector2i) -> void:
 		return
 
 	var current_cell = world_to_cell(global_position)
-	var target_cell = current_cell + dir
 
-	if is_blocked_all_layers(target_cell):
+	# Les sauts diagonaux restent sur 1 case
+	var max_distance := 1
+
+	# Les déplacements horizontaux peuvent aller jusqu'à 3 cases
+	if dir.y == 0:
+		max_distance = 3
+
+	var move_distance := 0
+
+	for i in range(1, max_distance + 1):
+		var test_cell = current_cell + dir * i
+
+		# Collision
+		if is_blocked_all_layers(test_cell):
+			break
+
+		# Pour les déplacements horizontaux :
+		# il faut un sol sous la case
+		if dir.y == 0:
+			var below = test_cell + Vector2i.DOWN
+
+			if should_fall():
+				break
+
+		move_distance = i
+
+	# Aucun déplacement possible
+	if move_distance == 0:
 		EventBus.check_is_arrived.emit(id, false)
 		return
+
 	is_moving = true
 
+	var target_cell = current_cell + dir * move_distance
 	var target_world = cell_to_world(target_cell)
 
 	var tween = create_tween()
@@ -92,6 +122,11 @@ func try_move(id : int, dir: Vector2i) -> void:
 	await tween.finished
 
 	is_moving = false
+
+	# Déclenche immédiatement la chute si nécessaire
+	if should_fall():
+		await fall()
+
 	EventBus.check_is_arrived.emit(id, true)
 
 func should_fall() -> bool:
@@ -101,7 +136,7 @@ func should_fall() -> bool:
 
 	return not is_blocked_all_layers(below)
 		
-func fall():
+func fall() -> void:
 	if is_moving:
 		return
 
@@ -138,18 +173,23 @@ func fall():
 	await tween.finished
 
 	is_moving = false
+	current_movement = MOVEMENT.GROUNDED
+
+	fall_finished.emit()
 # --------------------------------------------------
 # ACTIONS
 # --------------------------------------------------
 
 func on_move_right(id:int):
 	$AnimatedSprite2D.scale.x = 1
+	AudioBus.play_sfx(PreloadBus.sfx["step1"])
 	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i.RIGHT)
 	current_movement = MOVEMENT.GROUNDED
 	
 
 func on_move_left(id:int):
+	AudioBus.play_sfx(PreloadBus.sfx["step1"])
 	$AnimatedSprite2D.scale.x = -1
 	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i.LEFT)
@@ -157,6 +197,7 @@ func on_move_left(id:int):
 	
 	
 func on_jump_right(id:int):
+	AudioBus.play_sfx(PreloadBus.sfx["jump"])
 	$AnimatedSprite2D.scale.x = 1
 	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i(1, -1))
@@ -164,6 +205,7 @@ func on_jump_right(id:int):
 	
 
 func on_jump_left(id:int):
+	AudioBus.play_sfx(PreloadBus.sfx["jump"])
 	$AnimatedSprite2D.scale.x = -1
 	$AnimatedSprite2D.play("run")
 	await try_move(id, Vector2i(-1, -1))
