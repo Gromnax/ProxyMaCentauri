@@ -20,6 +20,7 @@ var has_started : bool = false:
 	set(new_value):
 		if not has_started and new_value:
 			EventBus.level_start.emit()
+			print("Level started")
 		has_started = new_value
 
 # Called when the node enters the scene tree for the first time.
@@ -48,6 +49,9 @@ func _gui_input(event: InputEvent) -> void:
 		delete_selected_nodes()
 
 func _on_connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
+	if has_started:
+		print("Can't connect while running")
+		return
 	print("Connection requested")
 	connect_node(from_node, from_port, to_node, to_port)
 	var target : Node = get_child_from_name(to_node)
@@ -56,7 +60,9 @@ func _on_connection_request(from_node: StringName, from_port: int, to_node: Stri
 		target.listen_start(to_port, origin.output)
 
 func _on_disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
-	print("Disconnection requested")
+	if has_started:
+		print("Can't disconnect while running")
+		return
 	disconnect_node(from_node, from_port, to_node, to_port)
 	var target : Node = get_child_from_name(to_node)
 	var origin : Node = get_child_from_name(from_node)
@@ -74,7 +80,10 @@ func _on_child_entered_tree(node: Node) -> void:
 
 func on_output_emitted(source: Node, port: int, value:String) -> void:
 	if not has_started:
-		has_started = true
+		if source is PulsarClic or source is PulsarNode:
+			has_started = true
+		else:
+			return
 	var retrieved_connections = get_output_connections_from_node(source, port)
 	var child : GraphControlNode
 	for connection in retrieved_connections:
