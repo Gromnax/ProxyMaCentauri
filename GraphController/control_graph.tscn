@@ -64,7 +64,6 @@ layout_mode = 2
 text = "Add Pulsar Clic"
 
 [node name="PrintButton" type="Button" parent="GraphEdit/PopupMenu/ScrollContainer/HFlowContainer" unique_id=376034712]
-visible = false
 layout_mode = 2
 text = "Add Printer"
 

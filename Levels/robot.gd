@@ -97,6 +97,7 @@ func try_move(id : int, dir: Vector2i) -> void:
 
 	# Aucun déplacement possible
 	if move_distance == 0:
+		print("impossible", id)
 		EventBus.check_is_arrived.emit(id, false)
 		return
 

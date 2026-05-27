@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://ikumhi4ewadq" path="res://Assets/Characters/astronaut.png" id="5_hea6s"]
 [ext_resource type="Texture2D" uid="uid://dc2dcv0kcyi6h" path="res://Assets/Tiles/pillar-Sheet.png" id="6_rewe7"]
 [ext_resource type="PackedScene" uid="uid://dalqt0qo5f3qe" path="res://Levels/robot.tscn" id="7_s62f6"]
-[ext_resource type="Script" path="res://Levels/control.gd" id="8_l3rf8"]
+[ext_resource type="Script" uid="uid://bujiir7nvnfx" path="res://Levels/control.gd" id="8_l3rf8"]
 [ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="9_76ieb"]
 [ext_resource type="Texture2D" uid="uid://251lpi6tgpxj" path="res://Assets/UI/phase.png" id="10_g2l2f"]
 [ext_resource type="PackedScene" uid="uid://d2xked7pqiy7r" path="res://GraphController/control_graph.tscn" id="11_nd724"]
 [ext_resource type="Script" uid="uid://6teyb5tdjs8" path="res://Levels/control_no_code.gd" id="12_k31s7"]
-[ext_resource type="Script" path="res://Levels/pause.gd" id="13_uc020"]
+[ext_resource type="Script" uid="uid://b03ii54bg28l6" path="res://Levels/pause.gd" id="13_uc020"]
 [ext_resource type="Texture2D" uid="uid://da5jt5fn8keeh" path="res://Assets/UI/Circles_full.png" id="14_5r3nh"]
 [ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="15_8u2qb"]
 [ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="16_8etqx"]
@@ -1189,7 +1189,6 @@ tile_set = SubResource("TileSet_mkyii")
 metadata/_edit_lock_ = true
 
 [node name="ObjectsLayer" type="TileMapLayer" parent="." unique_id=1888912157]
-tile_map_data = PackedByteArray("AAAiABYAAgAAAAIAAAAiABUAAgAAAAEAAAAiABQAAgAAAAEAAAAiABMAAgAAAAEAAAAiABIAAgAAAAEAAAAiABEAAgAAAAEAAAAiABAAAgAAAAAAAAAvABAAAgAAAAAAAAAvABEAAgAAAAEAAAAvABIAAgAAAAEAAAAvABMAAgAAAAEAAAAvABQAAgAAAAEAAAAvABUAAgAAAAEAAAAvABYAAgAAAAIAAAA=")
 tile_set = SubResource("TileSet_bwca4")
 
 [node name="Robot" parent="." unique_id=691846173 instance=ExtResource("7_s62f6")]
@@ -1216,6 +1215,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oe5jq")
 layout_mode = 2
 
 [node name="ButtonStart" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=1658404559]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_76ieb")
 theme_override_font_sizes/font_size = 32
