@@ -55,4 +55,5 @@ func feedback_received(feedback_id : int, move_success: bool) -> void:
 	if move_success:
 		output.emit(self, 0, "moved")
 	else:
+		print("failed")
 		output.emit(self, 1, "move_failed")

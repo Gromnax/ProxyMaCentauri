@@ -1216,6 +1216,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oe5jq")
 layout_mode = 2
 
 [node name="ButtonStart" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=1658404559]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_htfa2")
 theme_override_font_sizes/font_size = 32

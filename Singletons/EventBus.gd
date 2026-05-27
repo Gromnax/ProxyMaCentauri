@@ -46,5 +46,5 @@ func log_signal_check_obj(id: int, direction: Vector2i = Vector2i.ZERO, signal_n
 func log_signal(id: int, _response: bool = false, signal_name: String="") -> void:
 	var to_print : String = ""
 	to_print += "Signal called ("+str(id)+") : "
-	to_print += signal_name
+	to_print += signal_name + str(_response)
 	print(to_print)

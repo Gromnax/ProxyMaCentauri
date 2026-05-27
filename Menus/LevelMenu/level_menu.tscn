@@ -92,7 +92,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
-text = "01 - Stairs"
+text = "01 - Level 1"
 
 [node name="Button02" type="Button" parent="VBoxContainer" unique_id=654061222]
 layout_mode = 2
@@ -103,7 +103,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
-text = "02 - "
+text = "02 - Level 2"
 
 [node name="Button03" type="Button" parent="VBoxContainer" unique_id=1881347352]
 layout_mode = 2
@@ -114,7 +114,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
-text = "03 - "
+text = "03 - Level 3"
 
 [node name="Button04" type="Button" parent="VBoxContainer" unique_id=1054886893]
 layout_mode = 2
@@ -125,7 +125,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
-text = "04 -"
+text = "04 - Level  4"
 
 [node name="Button05" type="Button" parent="VBoxContainer" unique_id=1339190774]
 layout_mode = 2
@@ -136,7 +136,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
-text = "05 -"
+text = "05 - Level 5"
 
 [node name="Button06" type="Button" parent="VBoxContainer" unique_id=1069702664]
 layout_mode = 2
@@ -147,9 +147,10 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ex724")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_644hd")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
-text = "06 -"
+text = "06 - Level  6"
 
 [node name="Button07" type="Button" parent="VBoxContainer" unique_id=1366258741]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_hn0qk")
 theme_override_font_sizes/font_size = 32
@@ -161,6 +162,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
 text = "07 -"
 
 [node name="Button08" type="Button" parent="VBoxContainer" unique_id=831808126]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_hn0qk")
 theme_override_font_sizes/font_size = 32
@@ -172,6 +174,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_ex724")
 text = "08 -"
 
 [node name="Button09" type="Button" parent="VBoxContainer" unique_id=1687474456]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_hn0qk")
 theme_override_font_sizes/font_size = 32
