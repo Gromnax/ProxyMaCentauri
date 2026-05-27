@@ -91,18 +91,26 @@ func on_output_emitted(source: Node, port: int, value:String) -> void:
 	var retrieved_connections = get_output_connections_from_node(source, port)
 	var child : GraphControlNode
 	for connection in retrieved_connections:
+		print("connection : "+str(connection))
 		child = find_child(connection.node, false, false)
 		child.signal_received(connection.port, value)
+		print("Graph output: Source: "+str(source), ", port: "+str(port), ", destination : "+str(connection.node), ", port : "+str(connection.port))
 
 func get_output_connections_from_node(node:Node, port: int) -> Array:
 	var retrieved_connections = get_connection_list_from_node(node.name)
 	var result = []
 	for connection in retrieved_connections:
 		var dict = {}
+		var unique : bool = true
 		if connection["from_node"] == node.name and connection["from_port"] == port:
 			dict["node"] = connection["to_node"]
 			dict["port"] = connection["to_port"]
-			result.push_back(dict)
+			for other_dic: Dictionary in result:
+				if other_dic.recursive_equal(dict,2):
+					unique = false
+			if unique:
+				result.push_back(dict)
+	print(str(result))
 	return result
 
 
