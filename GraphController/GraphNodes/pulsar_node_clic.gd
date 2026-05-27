@@ -20,4 +20,5 @@ func signal_received(_port: int, _value:String="") -> void:
 
 
 func _on_button_pressed() -> void:
+	print("Manual pulse sent")
 	output.emit(self, 0, "manual pulse")
