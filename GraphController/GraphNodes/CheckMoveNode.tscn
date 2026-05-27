@@ -58,11 +58,11 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Container2" unique_id=932829704]
 layout_mode = 2
-text = "Move possible"
+text = "Move impossible"
 
 [node name="Container3" type="AspectRatioContainer" parent="." unique_id=512395729]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Container3" unique_id=1016491370]
 layout_mode = 2
-text = "Move impossible"
+text = "Move possible"
