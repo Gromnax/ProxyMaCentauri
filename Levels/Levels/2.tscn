@@ -1145,7 +1145,7 @@ ambient_light_energy = 3.77
 texture_filter = 1
 script = ExtResource("1_nejsl")
 unlock_level = "unlock_03"
-start_position = Vector2(58, 720)
+start_position = Vector2(58, 499)
 
 [node name="Parallax2DBack" type="Parallax2D" parent="." unique_id=709705846]
 scroll_scale = Vector2(1.1, 1)

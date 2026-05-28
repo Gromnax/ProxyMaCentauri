@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://ikumhi4ewadq" path="res://Assets/Characters/astronaut.png" id="5_g8lm6"]
 [ext_resource type="Texture2D" uid="uid://dc2dcv0kcyi6h" path="res://Assets/Tiles/pillar-Sheet.png" id="6_s23vd"]
 [ext_resource type="PackedScene" uid="uid://dalqt0qo5f3qe" path="res://Levels/robot.tscn" id="7_g0xet"]
-[ext_resource type="Script" path="res://Levels/control.gd" id="8_wwv0n"]
+[ext_resource type="Script" uid="uid://bujiir7nvnfx" path="res://Levels/control.gd" id="8_wwv0n"]
 [ext_resource type="FontFile" uid="uid://ctdjdyra4wp1q" path="res://Assets/UI/Font/Coda/Coda-Regular.ttf" id="9_hbchk"]
 [ext_resource type="Texture2D" uid="uid://251lpi6tgpxj" path="res://Assets/UI/phase.png" id="10_2j3c1"]
 [ext_resource type="PackedScene" uid="uid://d2xked7pqiy7r" path="res://GraphController/control_graph.tscn" id="11_yg83e"]
 [ext_resource type="Script" uid="uid://6teyb5tdjs8" path="res://Levels/control_no_code.gd" id="12_n8al6"]
-[ext_resource type="Script" path="res://Levels/pause.gd" id="13_lnyah"]
+[ext_resource type="Script" uid="uid://b03ii54bg28l6" path="res://Levels/pause.gd" id="13_lnyah"]
 [ext_resource type="Texture2D" uid="uid://da5jt5fn8keeh" path="res://Assets/UI/Circles_full.png" id="14_mkhp5"]
 [ext_resource type="Script" uid="uid://bc8enj4bkout1" path="res://Menus/MainMenu/button_menu.gd" id="15_toa4i"]
 [ext_resource type="FontFile" uid="uid://cciy2qi5sx6yy" path="res://Assets/UI/Font/Megrim/Megrim-Regular.ttf" id="16_le17u"]
@@ -730,6 +730,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-16, 15)
+0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSet" id="TileSet_qqhdm"]
 tile_size = Vector2i(32, 32)
@@ -1109,10 +1110,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_bwca4")
 
-[sub_resource type="LabelSettings" id="LabelSettings_xyla6"]
-font = ExtResource("9_hbchk")
-font_size = 26
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oe5jq"]
 content_margin_left = 10.0
 content_margin_top = 10.0
@@ -1199,16 +1196,6 @@ tile_set = SubResource("TileSet_bwca4")
 [node name="Robot" parent="." unique_id=691846173 instance=ExtResource("7_g0xet")]
 position = Vector2(58, 720)
 
-[node name="Label" type="Label" parent="." unique_id=1059424640]
-offset_left = 199.0
-offset_top = 595.0
-offset_right = 639.0
-offset_bottom = 672.0
-text = "You can stay on all layers of obstacles.
-You should not fall in this hole."
-label_settings = SubResource("LabelSettings_xyla6")
-horizontal_alignment = 1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2052052584]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1315069773]
@@ -1230,6 +1217,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oe5jq")
 layout_mode = 2
 
 [node name="ButtonStart" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=1658404559]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_hbchk")
 theme_override_font_sizes/font_size = 32

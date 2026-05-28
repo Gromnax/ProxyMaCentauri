@@ -9,7 +9,7 @@ var collision_layers = [boundary_layer, obstacle1_layer, obstacle2_layer]
 @onready var level = $".."
 
 const TILE_SIZE := 32
-const MOVE_TIME := 0.3
+const MOVE_TIME := 0.2
 const JUMP_HEIGHT := 64
 
 enum MOVEMENT {

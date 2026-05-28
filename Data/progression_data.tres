@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="ProgressionData" format=3]
+[gd_resource type="Resource" script_class="ProgressionData" format=3 uid="uid://ctwejbwprha8r"]
 
-[ext_resource type="Script" path="res://Data/Struct/progression_struct.gd" id="1_swtba"]
+[ext_resource type="Script" uid="uid://cw4qd2187afxb" path="res://Data/Struct/progression_struct.gd" id="1_swtba"]
 
 [resource]
 script = ExtResource("1_swtba")
-unlock_01 = true
