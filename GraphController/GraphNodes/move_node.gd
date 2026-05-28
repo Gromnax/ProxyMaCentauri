@@ -20,7 +20,6 @@ func on_unhandled_signal_received(_args: Dictionary={}) -> void:
 	pass
 
 func signal_received(_port: int, _value:String="") -> void:
-	await get_tree().create_timer(0.5).timeout
 	var selected_items : Array = item_list.get_selected_items()
 	var request : int = EventBus.get_unused_id()
 	request_ids[request] = ""
@@ -37,7 +36,7 @@ func signal_received(_port: int, _value:String="") -> void:
 			EventBus.jump_right.emit(request)
 	
 func feedback_received(feedback_id : int, move_success: bool) -> void:
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(1).timeout
 	print("feedback received!")
 	if not request_ids.has(feedback_id):
 		return

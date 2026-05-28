@@ -730,6 +730,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-16, 15)
+0:0/0/custom_data_0 = true
 
 [sub_resource type="TileSet" id="TileSet_qqhdm"]
 tile_size = Vector2i(32, 32)

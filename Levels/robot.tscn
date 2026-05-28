@@ -69,7 +69,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"run",
-"speed": 15.0
+"speed": 35.0
 }]
 
 [node name="Robot" type="Node2D" unique_id=160015996]
